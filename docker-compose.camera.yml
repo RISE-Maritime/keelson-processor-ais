@@ -1,0 +1,9 @@
+services:
+
+  keelson-processor-ais:
+    build: .
+    container_name: keelson-processor-ais
+    restart: unless-stopped
+    network_mode: "host"
+    command: "--log-level 10 -r rise -e boatswain -s rutx --publish raw_string --publish raw --publish log --publish nmea --udp-port 8500"
+    

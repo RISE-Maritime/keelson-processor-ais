@@ -1,0 +1,4292 @@
+[
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466050.9071414,
+    "publish_time": 1718466050.8960044,
+    "data": {
+      "timestamp": "2024-06-15T15:40:50.895074010Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466050.9080503,
+    "publish_time": 1718466050.8974547,
+    "data": {
+      "timestamp": "2024-06-15T15:40:50.896772436Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466050.9083848,
+    "publish_time": 1718466050.8988295,
+    "data": {
+      "timestamp": "2024-06-15T15:40:50.898102617Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466050.9086754,
+    "publish_time": 1718466050.9001808,
+    "data": {
+      "timestamp": "2024-06-15T15:40:50.899484925Z",
+      "value": "$GPGSV,7,1,25,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*64\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466050.9089162,
+    "publish_time": 1718466050.9006388,
+    "data": {
+      "timestamp": "2024-06-15T15:40:50.900486806Z",
+      "value": "$GPGSV,7,2,25,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466050.9091468,
+    "publish_time": 1718466050.9009194,
+    "data": {
+      "timestamp": "2024-06-15T15:40:50.900773252Z",
+      "value": "$GPGSV,7,3,25,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466050.9093761,
+    "publish_time": 1718466050.9011934,
+    "data": {
+      "timestamp": "2024-06-15T15:40:50.901047006Z",
+      "value": "$GPGSV,7,4,25,28,28,047,,31,35,085,,32,,,,33,,,35,1*6D\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466050.909649,
+    "publish_time": 1718466050.901466,
+    "data": {
+      "timestamp": "2024-06-15T15:40:50.901321145Z",
+      "value": "$GPGSV,7,5,25,38,,,35,39,,,34,41,,,35,42,,,34,1*63\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466050.9098623,
+    "publish_time": 1718466050.9017444,
+    "data": {
+      "timestamp": "2024-06-15T15:40:50.901598012Z",
+      "value": "$GPGSV,7,6,25,46,,,34,48,,,35,49,,,35,50,,,35,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466050.9100928,
+    "publish_time": 1718466050.9020233,
+    "data": {
+      "timestamp": "2024-06-15T15:40:50.901877036Z",
+      "value": "$GPGSV,7,7,25,51,,,34,1*60\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466050.9103324,
+    "publish_time": 1718466050.9023132,
+    "data": {
+      "timestamp": "2024-06-15T15:40:50.902150484Z",
+      "value": "$GPGGA,154050.91,,,,,0,,,,,,,,*45\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466050.9105763,
+    "publish_time": 1718466050.9026768,
+    "data": {
+      "timestamp": "2024-06-15T15:40:50.902485706Z",
+      "value": "$GNGNS,154050.91,,,,,NNN,,,,,,*3E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466050.910792,
+    "publish_time": 1718466050.9030008,
+    "data": {
+      "timestamp": "2024-06-15T15:40:50.902837238Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466050.9109752,
+    "publish_time": 1718466050.9033387,
+    "data": {
+      "timestamp": "2024-06-15T15:40:50.903157126Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466050.9111478,
+    "publish_time": 1718466050.9036896,
+    "data": {
+      "timestamp": "2024-06-15T15:40:50.903505543Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466050.9113195,
+    "publish_time": 1718466050.9040155,
+    "data": {
+      "timestamp": "2024-06-15T15:40:50.903842892Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466051.9093168,
+    "publish_time": 1718466051.8958387,
+    "data": {
+      "timestamp": "2024-06-15T15:40:51.894903804Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466051.9095604,
+    "publish_time": 1718466051.8982532,
+    "data": {
+      "timestamp": "2024-06-15T15:40:51.897434565Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466051.9099174,
+    "publish_time": 1718466051.8995843,
+    "data": {
+      "timestamp": "2024-06-15T15:40:51.898878842Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466051.9101605,
+    "publish_time": 1718466051.9009595,
+    "data": {
+      "timestamp": "2024-06-15T15:40:51.900242327Z",
+      "value": "$GPGSV,7,1,25,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*64\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466051.9109461,
+    "publish_time": 1718466051.9023054,
+    "data": {
+      "timestamp": "2024-06-15T15:40:51.901585258Z",
+      "value": "$GPGSV,7,2,25,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466051.9114242,
+    "publish_time": 1718466051.9034038,
+    "data": {
+      "timestamp": "2024-06-15T15:40:51.903061879Z",
+      "value": "$GPGSV,7,3,25,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466051.911824,
+    "publish_time": 1718466051.9037054,
+    "data": {
+      "timestamp": "2024-06-15T15:40:51.903520748Z",
+      "value": "$GPGSV,7,4,25,28,28,047,,31,35,085,,32,,,,33,,,35,1*6D\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466051.9121125,
+    "publish_time": 1718466051.9039822,
+    "data": {
+      "timestamp": "2024-06-15T15:40:51.903839086Z",
+      "value": "$GPGSV,7,5,25,38,,,35,39,,,34,41,,,35,42,,,34,1*63\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466051.9124136,
+    "publish_time": 1718466051.9042554,
+    "data": {
+      "timestamp": "2024-06-15T15:40:51.904110041Z",
+      "value": "$GPGSV,7,6,25,46,,,34,48,,,35,49,,,35,50,,,35,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466051.9126456,
+    "publish_time": 1718466051.9045262,
+    "data": {
+      "timestamp": "2024-06-15T15:40:51.904381074Z",
+      "value": "$GPGSV,7,7,25,51,,,34,1*60\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466051.9128628,
+    "publish_time": 1718466051.9048052,
+    "data": {
+      "timestamp": "2024-06-15T15:40:51.904659941Z",
+      "value": "$GPGGA,154051.91,,,,,0,,,,,,,,*44\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466051.9130814,
+    "publish_time": 1718466051.9050813,
+    "data": {
+      "timestamp": "2024-06-15T15:40:51.904936205Z",
+      "value": "$GNGNS,154051.91,,,,,NNN,,,,,,*3F\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466051.913301,
+    "publish_time": 1718466051.9053862,
+    "data": {
+      "timestamp": "2024-06-15T15:40:51.905209920Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466051.9135258,
+    "publish_time": 1718466051.9057453,
+    "data": {
+      "timestamp": "2024-06-15T15:40:51.905551299Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466051.9137757,
+    "publish_time": 1718466051.906099,
+    "data": {
+      "timestamp": "2024-06-15T15:40:51.905910080Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466051.9140055,
+    "publish_time": 1718466051.906455,
+    "data": {
+      "timestamp": "2024-06-15T15:40:51.906284491Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466052.9082909,
+    "publish_time": 1718466052.897808,
+    "data": {
+      "timestamp": "2024-06-15T15:40:52.896674903Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466052.9085536,
+    "publish_time": 1718466052.8993087,
+    "data": {
+      "timestamp": "2024-06-15T15:40:52.898526877Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466052.9088876,
+    "publish_time": 1718466052.9014282,
+    "data": {
+      "timestamp": "2024-06-15T15:40:52.900336049Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466052.909154,
+    "publish_time": 1718466052.9024267,
+    "data": {
+      "timestamp": "2024-06-15T15:40:52.902222044Z",
+      "value": "$GPGSV,7,1,25,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*64\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466052.9094942,
+    "publish_time": 1718466052.9026766,
+    "data": {
+      "timestamp": "2024-06-15T15:40:52.902546677Z",
+      "value": "$GPGSV,7,2,25,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466052.9100246,
+    "publish_time": 1718466052.9029245,
+    "data": {
+      "timestamp": "2024-06-15T15:40:52.902797373Z",
+      "value": "$GPGSV,7,3,25,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466052.9104922,
+    "publish_time": 1718466052.9031773,
+    "data": {
+      "timestamp": "2024-06-15T15:40:52.903051338Z",
+      "value": "$GPGSV,7,4,25,28,28,047,,31,35,085,,32,,,,33,,,35,1*6D\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466052.9112024,
+    "publish_time": 1718466052.9034266,
+    "data": {
+      "timestamp": "2024-06-15T15:40:52.903300557Z",
+      "value": "$GPGSV,7,5,25,38,,,35,39,,,34,41,,,35,42,,,34,1*63\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466052.911792,
+    "publish_time": 1718466052.9036899,
+    "data": {
+      "timestamp": "2024-06-15T15:40:52.903551650Z",
+      "value": "$GPGSV,7,6,25,46,,,34,48,,,35,49,,,35,50,,,35,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466052.9122505,
+    "publish_time": 1718466052.9039464,
+    "data": {
+      "timestamp": "2024-06-15T15:40:52.903815347Z",
+      "value": "$GPGSV,7,7,25,51,,,34,1*60\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466052.9128263,
+    "publish_time": 1718466052.9042034,
+    "data": {
+      "timestamp": "2024-06-15T15:40:52.904072151Z",
+      "value": "$GPGGA,154052.91,,,,,0,,,,,,,,*47\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466052.91385,
+    "publish_time": 1718466052.904561,
+    "data": {
+      "timestamp": "2024-06-15T15:40:52.904379663Z",
+      "value": "$GNGNS,154052.91,,,,,NNN,,,,,,*3C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466052.9140513,
+    "publish_time": 1718466052.904906,
+    "data": {
+      "timestamp": "2024-06-15T15:40:52.904731607Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466052.914668,
+    "publish_time": 1718466052.905254,
+    "data": {
+      "timestamp": "2024-06-15T15:40:52.905076240Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466052.9153776,
+    "publish_time": 1718466052.9055653,
+    "data": {
+      "timestamp": "2024-06-15T15:40:52.905403891Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466052.9161143,
+    "publish_time": 1718466052.9058719,
+    "data": {
+      "timestamp": "2024-06-15T15:40:52.905716755Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466053.907909,
+    "publish_time": 1718466053.8964946,
+    "data": {
+      "timestamp": "2024-06-15T15:40:53.895361475Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466053.9081845,
+    "publish_time": 1718466053.897782,
+    "data": {
+      "timestamp": "2024-06-15T15:40:53.897179355Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466053.9085398,
+    "publish_time": 1718466053.8988745,
+    "data": {
+      "timestamp": "2024-06-15T15:40:53.898302779Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466053.908872,
+    "publish_time": 1718466053.89995,
+    "data": {
+      "timestamp": "2024-06-15T15:40:53.899383797Z",
+      "value": "$GPGSV,7,1,25,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*64\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466053.9091246,
+    "publish_time": 1718466053.9004862,
+    "data": {
+      "timestamp": "2024-06-15T15:40:53.900384885Z",
+      "value": "$GPGSV,7,2,25,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466053.909449,
+    "publish_time": 1718466053.9006903,
+    "data": {
+      "timestamp": "2024-06-15T15:40:53.900588153Z",
+      "value": "$GPGSV,7,3,25,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466053.9097893,
+    "publish_time": 1718466053.900887,
+    "data": {
+      "timestamp": "2024-06-15T15:40:53.900785954Z",
+      "value": "$GPGSV,7,4,25,28,28,047,,31,35,085,,32,,,,33,,,35,1*6D\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466053.9101436,
+    "publish_time": 1718466053.9010835,
+    "data": {
+      "timestamp": "2024-06-15T15:40:53.900981071Z",
+      "value": "$GPGSV,7,5,25,38,,,35,39,,,34,41,,,35,42,,,34,1*63\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466053.910619,
+    "publish_time": 1718466053.901281,
+    "data": {
+      "timestamp": "2024-06-15T15:40:53.901179016Z",
+      "value": "$GPGSV,7,6,25,46,,,34,48,,,35,49,,,35,50,,,35,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466053.9111302,
+    "publish_time": 1718466053.901479,
+    "data": {
+      "timestamp": "2024-06-15T15:40:53.901376571Z",
+      "value": "$GPGSV,7,7,25,51,,,34,1*60\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466053.9115958,
+    "publish_time": 1718466053.9016821,
+    "data": {
+      "timestamp": "2024-06-15T15:40:53.901579194Z",
+      "value": "$GPGGA,154053.91,,,,,0,,,,,,,,*46\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466053.912201,
+    "publish_time": 1718466053.901879,
+    "data": {
+      "timestamp": "2024-06-15T15:40:53.901776896Z",
+      "value": "$GNGNS,154053.91,,,,,NNN,,,,,,*3D\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466053.9126275,
+    "publish_time": 1718466053.9022179,
+    "data": {
+      "timestamp": "2024-06-15T15:40:53.902066730Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466053.9131165,
+    "publish_time": 1718466053.9034128,
+    "data": {
+      "timestamp": "2024-06-15T15:40:53.903251946Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466053.9135919,
+    "publish_time": 1718466053.9043279,
+    "data": {
+      "timestamp": "2024-06-15T15:40:53.904159762Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466053.9141994,
+    "publish_time": 1718466053.9051168,
+    "data": {
+      "timestamp": "2024-06-15T15:40:53.904966114Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466054.9073262,
+    "publish_time": 1718466054.89606,
+    "data": {
+      "timestamp": "2024-06-15T15:40:54.895013519Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466054.9076452,
+    "publish_time": 1718466054.8972282,
+    "data": {
+      "timestamp": "2024-06-15T15:40:54.896654591Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466054.9080572,
+    "publish_time": 1718466054.8983023,
+    "data": {
+      "timestamp": "2024-06-15T15:40:54.897768169Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466054.9083297,
+    "publish_time": 1718466054.8993707,
+    "data": {
+      "timestamp": "2024-06-15T15:40:54.898826303Z",
+      "value": "$GPGSV,7,1,25,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*64\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466054.9087377,
+    "publish_time": 1718466054.9003315,
+    "data": {
+      "timestamp": "2024-06-15T15:40:54.899894815Z",
+      "value": "$GPGSV,7,2,25,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466054.909027,
+    "publish_time": 1718466054.9005249,
+    "data": {
+      "timestamp": "2024-06-15T15:40:54.900424596Z",
+      "value": "$GPGSV,7,3,25,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466054.9093273,
+    "publish_time": 1718466054.900725,
+    "data": {
+      "timestamp": "2024-06-15T15:40:54.900623174Z",
+      "value": "$GPGSV,7,4,25,28,28,047,,31,35,085,,32,,,,33,,,35,1*6D\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466054.909657,
+    "publish_time": 1718466054.900921,
+    "data": {
+      "timestamp": "2024-06-15T15:40:54.900819818Z",
+      "value": "$GPGSV,7,5,25,38,,,35,39,,,34,41,,,35,42,,,34,1*63\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466054.9100082,
+    "publish_time": 1718466054.9011168,
+    "data": {
+      "timestamp": "2024-06-15T15:40:54.901016310Z",
+      "value": "$GPGSV,7,6,25,46,,,34,48,,,35,49,,,35,50,,,35,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466054.9103575,
+    "publish_time": 1718466054.9015856,
+    "data": {
+      "timestamp": "2024-06-15T15:40:54.901424598Z",
+      "value": "$GPGSV,7,7,25,51,,,34,1*60\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466054.910702,
+    "publish_time": 1718466054.9020438,
+    "data": {
+      "timestamp": "2024-06-15T15:40:54.901891353Z",
+      "value": "$GPGGA,154054.91,,,,,0,,,,,,,,*41\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466054.9110563,
+    "publish_time": 1718466054.90258,
+    "data": {
+      "timestamp": "2024-06-15T15:40:54.902402634Z",
+      "value": "$GNGNS,154054.91,,,,,NNN,,,,,,*3A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466054.9114137,
+    "publish_time": 1718466054.9032552,
+    "data": {
+      "timestamp": "2024-06-15T15:40:54.903086864Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466054.9117918,
+    "publish_time": 1718466054.9038363,
+    "data": {
+      "timestamp": "2024-06-15T15:40:54.903667519Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466054.91218,
+    "publish_time": 1718466054.9044492,
+    "data": {
+      "timestamp": "2024-06-15T15:40:54.904292360Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466054.9124365,
+    "publish_time": 1718466054.905004,
+    "data": {
+      "timestamp": "2024-06-15T15:40:54.904848351Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466055.910046,
+    "publish_time": 1718466055.8999422,
+    "data": {
+      "timestamp": "2024-06-15T15:40:55.898807214Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466055.910385,
+    "publish_time": 1718466055.9014676,
+    "data": {
+      "timestamp": "2024-06-15T15:40:55.900696559Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466055.9107318,
+    "publish_time": 1718466055.9029264,
+    "data": {
+      "timestamp": "2024-06-15T15:40:55.902166777Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466055.9110336,
+    "publish_time": 1718466055.9042728,
+    "data": {
+      "timestamp": "2024-06-15T15:40:55.903543519Z",
+      "value": "$GPGSV,7,1,25,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*64\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466055.9113042,
+    "publish_time": 1718466055.904515,
+    "data": {
+      "timestamp": "2024-06-15T15:40:55.904392817Z",
+      "value": "$GPGSV,7,2,25,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466055.9118032,
+    "publish_time": 1718466055.9047632,
+    "data": {
+      "timestamp": "2024-06-15T15:40:55.904632181Z",
+      "value": "$GPGSV,7,3,25,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466055.9122775,
+    "publish_time": 1718466055.905016,
+    "data": {
+      "timestamp": "2024-06-15T15:40:55.904887797Z",
+      "value": "$GPGSV,7,4,25,28,28,047,,31,35,085,,32,,,,33,,,35,1*6D\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466055.9125228,
+    "publish_time": 1718466055.9052668,
+    "data": {
+      "timestamp": "2024-06-15T15:40:55.905139256Z",
+      "value": "$GPGSV,7,5,25,38,,,35,39,,,34,41,,,35,42,,,34,1*63\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466055.9127584,
+    "publish_time": 1718466055.9055178,
+    "data": {
+      "timestamp": "2024-06-15T15:40:55.905388519Z",
+      "value": "$GPGSV,7,6,25,46,,,34,48,,,35,49,,,35,50,,,35,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466055.9130125,
+    "publish_time": 1718466055.9057784,
+    "data": {
+      "timestamp": "2024-06-15T15:40:55.905649458Z",
+      "value": "$GPGSV,7,7,25,51,,,34,1*60\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466055.9132562,
+    "publish_time": 1718466055.9060278,
+    "data": {
+      "timestamp": "2024-06-15T15:40:55.905900441Z",
+      "value": "$GPGGA,154055.91,,,,,0,,,,,,,,*40\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466055.9134579,
+    "publish_time": 1718466055.906304,
+    "data": {
+      "timestamp": "2024-06-15T15:40:55.906147663Z",
+      "value": "$GNGNS,154055.91,,,,,NNN,,,,,,*3B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466055.9136605,
+    "publish_time": 1718466055.9066768,
+    "data": {
+      "timestamp": "2024-06-15T15:40:55.906483869Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466055.9138687,
+    "publish_time": 1718466055.907045,
+    "data": {
+      "timestamp": "2024-06-15T15:40:55.906858789Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466055.9140728,
+    "publish_time": 1718466055.9074066,
+    "data": {
+      "timestamp": "2024-06-15T15:40:55.907226564Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466055.9142916,
+    "publish_time": 1718466055.9077017,
+    "data": {
+      "timestamp": "2024-06-15T15:40:55.907532740Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466056.9092698,
+    "publish_time": 1718466056.900065,
+    "data": {
+      "timestamp": "2024-06-15T15:40:56.898928637Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466056.909629,
+    "publish_time": 1718466056.9015405,
+    "data": {
+      "timestamp": "2024-06-15T15:40:56.900809345Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466056.9098957,
+    "publish_time": 1718466056.9029899,
+    "data": {
+      "timestamp": "2024-06-15T15:40:56.902239207Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466056.9101968,
+    "publish_time": 1718466056.9042575,
+    "data": {
+      "timestamp": "2024-06-15T15:40:56.903605261Z",
+      "value": "$GPGSV,4,1,15,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*64\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466056.9107318,
+    "publish_time": 1718466056.9045503,
+    "data": {
+      "timestamp": "2024-06-15T15:40:56.904424871Z",
+      "value": "$GPGSV,4,2,15,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466056.9113083,
+    "publish_time": 1718466056.904805,
+    "data": {
+      "timestamp": "2024-06-15T15:40:56.904671814Z",
+      "value": "$GPGSV,4,3,15,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466056.9116812,
+    "publish_time": 1718466056.9050555,
+    "data": {
+      "timestamp": "2024-06-15T15:40:56.904928405Z",
+      "value": "$GPGSV,4,4,15,28,28,047,,31,35,085,,32,,,,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466056.9121163,
+    "publish_time": 1718466056.905305,
+    "data": {
+      "timestamp": "2024-06-15T15:40:56.905178843Z",
+      "value": "$GPGGA,154056.91,,,,,0,,,,,,,,*43\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466056.9123743,
+    "publish_time": 1718466056.90556,
+    "data": {
+      "timestamp": "2024-06-15T15:40:56.905426943Z",
+      "value": "$GNGNS,154056.91,,,,,NNN,,,,,,*38\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466056.9126067,
+    "publish_time": 1718466056.9058151,
+    "data": {
+      "timestamp": "2024-06-15T15:40:56.905683911Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466056.9128363,
+    "publish_time": 1718466056.9060626,
+    "data": {
+      "timestamp": "2024-06-15T15:40:56.905935316Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466056.9130638,
+    "publish_time": 1718466056.9063818,
+    "data": {
+      "timestamp": "2024-06-15T15:40:56.906190954Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466056.9132507,
+    "publish_time": 1718466056.906751,
+    "data": {
+      "timestamp": "2024-06-15T15:40:56.906567356Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466057.9073951,
+    "publish_time": 1718466057.8982055,
+    "data": {
+      "timestamp": "2024-06-15T15:40:57.897062702Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466057.9078186,
+    "publish_time": 1718466057.8998067,
+    "data": {
+      "timestamp": "2024-06-15T15:40:57.898977777Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466057.9082525,
+    "publish_time": 1718466057.9012904,
+    "data": {
+      "timestamp": "2024-06-15T15:40:57.900532256Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466057.9085946,
+    "publish_time": 1718466057.9023678,
+    "data": {
+      "timestamp": "2024-06-15T15:40:57.901990302Z",
+      "value": "$GPGSV,4,1,15,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*64\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466057.9089909,
+    "publish_time": 1718466057.902651,
+    "data": {
+      "timestamp": "2024-06-15T15:40:57.902486575Z",
+      "value": "$GPGSV,4,2,15,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466057.909181,
+    "publish_time": 1718466057.9028938,
+    "data": {
+      "timestamp": "2024-06-15T15:40:57.902768208Z",
+      "value": "$GPGSV,4,3,15,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466057.909413,
+    "publish_time": 1718466057.9031394,
+    "data": {
+      "timestamp": "2024-06-15T15:40:57.903014406Z",
+      "value": "$GPGSV,4,4,15,28,28,047,,31,35,085,,32,,,,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466057.9096735,
+    "publish_time": 1718466057.9033997,
+    "data": {
+      "timestamp": "2024-06-15T15:40:57.903269107Z",
+      "value": "$GPGGA,154057.91,,,,,0,,,,,,,,*42\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466057.9099445,
+    "publish_time": 1718466057.903673,
+    "data": {
+      "timestamp": "2024-06-15T15:40:57.903532252Z",
+      "value": "$GNGNS,154057.91,,,,,NNN,,,,,,*39\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466057.910203,
+    "publish_time": 1718466057.9039242,
+    "data": {
+      "timestamp": "2024-06-15T15:40:57.903798113Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466057.9105136,
+    "publish_time": 1718466057.9041734,
+    "data": {
+      "timestamp": "2024-06-15T15:40:57.904047115Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466057.9108083,
+    "publish_time": 1718466057.904496,
+    "data": {
+      "timestamp": "2024-06-15T15:40:57.904337026Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466057.9110458,
+    "publish_time": 1718466057.9048293,
+    "data": {
+      "timestamp": "2024-06-15T15:40:57.904664107Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466058.9060853,
+    "publish_time": 1718466058.897034,
+    "data": {
+      "timestamp": "2024-06-15T15:40:58.895894168Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466058.9074805,
+    "publish_time": 1718466058.8985426,
+    "data": {
+      "timestamp": "2024-06-15T15:40:58.897775150Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466058.9076114,
+    "publish_time": 1718466058.9000542,
+    "data": {
+      "timestamp": "2024-06-15T15:40:58.899303988Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466058.9077103,
+    "publish_time": 1718466058.9013112,
+    "data": {
+      "timestamp": "2024-06-15T15:40:58.900773868Z",
+      "value": "$GPGSV,4,1,15,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*64\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466058.9077983,
+    "publish_time": 1718466058.901548,
+    "data": {
+      "timestamp": "2024-06-15T15:40:58.901422830Z",
+      "value": "$GPGSV,4,2,15,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466058.9078896,
+    "publish_time": 1718466058.9018073,
+    "data": {
+      "timestamp": "2024-06-15T15:40:58.901678806Z",
+      "value": "$GPGSV,4,3,15,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466058.9079876,
+    "publish_time": 1718466058.9020605,
+    "data": {
+      "timestamp": "2024-06-15T15:40:58.901932379Z",
+      "value": "$GPGSV,4,4,15,28,28,047,,31,35,085,,32,,,,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466058.9080772,
+    "publish_time": 1718466058.9023163,
+    "data": {
+      "timestamp": "2024-06-15T15:40:58.902187340Z",
+      "value": "$GPGGA,154058.91,,,,,0,,,,,,,,*4D\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466058.9081662,
+    "publish_time": 1718466058.902574,
+    "data": {
+      "timestamp": "2024-06-15T15:40:58.902439986Z",
+      "value": "$GNGNS,154058.91,,,,,NNN,,,,,,*36\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466058.9082577,
+    "publish_time": 1718466058.902836,
+    "data": {
+      "timestamp": "2024-06-15T15:40:58.902703314Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466058.9083521,
+    "publish_time": 1718466058.9030943,
+    "data": {
+      "timestamp": "2024-06-15T15:40:58.902959934Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466058.9084253,
+    "publish_time": 1718466058.9033933,
+    "data": {
+      "timestamp": "2024-06-15T15:40:58.903221829Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466058.9086304,
+    "publish_time": 1718466058.9037507,
+    "data": {
+      "timestamp": "2024-06-15T15:40:58.903568239Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466059.9056146,
+    "publish_time": 1718466059.8974655,
+    "data": {
+      "timestamp": "2024-06-15T15:40:59.896344940Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466059.906053,
+    "publish_time": 1718466059.8990893,
+    "data": {
+      "timestamp": "2024-06-15T15:40:59.898288125Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466059.906388,
+    "publish_time": 1718466059.9005237,
+    "data": {
+      "timestamp": "2024-06-15T15:40:59.899869962Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466059.9067166,
+    "publish_time": 1718466059.9014626,
+    "data": {
+      "timestamp": "2024-06-15T15:40:59.901248683Z",
+      "value": "$GPGSV,4,1,15,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*64\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466059.9069548,
+    "publish_time": 1718466059.9016695,
+    "data": {
+      "timestamp": "2024-06-15T15:40:59.901565393Z",
+      "value": "$GPGSV,4,2,15,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466059.907199,
+    "publish_time": 1718466059.9018633,
+    "data": {
+      "timestamp": "2024-06-15T15:40:59.901763774Z",
+      "value": "$GPGSV,4,3,15,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466059.9074292,
+    "publish_time": 1718466059.9020576,
+    "data": {
+      "timestamp": "2024-06-15T15:40:59.901956988Z",
+      "value": "$GPGSV,4,4,15,28,28,047,,31,35,085,,32,,,,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466059.9076936,
+    "publish_time": 1718466059.9022508,
+    "data": {
+      "timestamp": "2024-06-15T15:40:59.902150796Z",
+      "value": "$GPGGA,154059.91,,,,,0,,,,,,,,*4C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466059.9079733,
+    "publish_time": 1718466059.9024446,
+    "data": {
+      "timestamp": "2024-06-15T15:40:59.902344280Z",
+      "value": "$GNGNS,154059.91,,,,,NNN,,,,,,*37\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466059.9081998,
+    "publish_time": 1718466059.9026494,
+    "data": {
+      "timestamp": "2024-06-15T15:40:59.902538133Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466059.90845,
+    "publish_time": 1718466059.9028463,
+    "data": {
+      "timestamp": "2024-06-15T15:40:59.902744775Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466059.9087148,
+    "publish_time": 1718466059.903045,
+    "data": {
+      "timestamp": "2024-06-15T15:40:59.902941938Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466059.908898,
+    "publish_time": 1718466059.9032416,
+    "data": {
+      "timestamp": "2024-06-15T15:40:59.903140186Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466060.9038782,
+    "publish_time": 1718466060.895733,
+    "data": {
+      "timestamp": "2024-06-15T15:41:00.894680674Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466060.9042702,
+    "publish_time": 1718466060.8969886,
+    "data": {
+      "timestamp": "2024-06-15T15:41:00.896389602Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466060.9046059,
+    "publish_time": 1718466060.8980877,
+    "data": {
+      "timestamp": "2024-06-15T15:41:00.897512059Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466060.905128,
+    "publish_time": 1718466060.8991642,
+    "data": {
+      "timestamp": "2024-06-15T15:41:00.898621560Z",
+      "value": "$GPGSV,4,1,15,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*64\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466060.9051888,
+    "publish_time": 1718466060.9002223,
+    "data": {
+      "timestamp": "2024-06-15T15:41:00.899688477Z",
+      "value": "$GPGSV,4,2,15,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466060.9052663,
+    "publish_time": 1718466060.9005442,
+    "data": {
+      "timestamp": "2024-06-15T15:41:00.900442659Z",
+      "value": "$GPGSV,4,3,15,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466060.9056916,
+    "publish_time": 1718466060.9007506,
+    "data": {
+      "timestamp": "2024-06-15T15:41:00.900649871Z",
+      "value": "$GPGSV,4,4,15,28,28,047,,31,35,085,,32,,,,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466060.9060893,
+    "publish_time": 1718466060.9009452,
+    "data": {
+      "timestamp": "2024-06-15T15:41:00.900845108Z",
+      "value": "$GPGGA,154100.91,,,,,0,,,,,,,,*41\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466060.9063926,
+    "publish_time": 1718466060.9011402,
+    "data": {
+      "timestamp": "2024-06-15T15:41:00.901039310Z",
+      "value": "$GNGNS,154100.91,,,,,NNN,,,,,,*3A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466060.906637,
+    "publish_time": 1718466060.9013357,
+    "data": {
+      "timestamp": "2024-06-15T15:41:00.901234947Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466060.9069114,
+    "publish_time": 1718466060.901531,
+    "data": {
+      "timestamp": "2024-06-15T15:41:00.901429587Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466060.9071894,
+    "publish_time": 1718466060.901731,
+    "data": {
+      "timestamp": "2024-06-15T15:41:00.901629878Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466060.9073923,
+    "publish_time": 1718466060.9019768,
+    "data": {
+      "timestamp": "2024-06-15T15:41:00.901841181Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466061.9071083,
+    "publish_time": 1718466061.8976774,
+    "data": {
+      "timestamp": "2024-06-15T15:41:01.896553379Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466061.9074771,
+    "publish_time": 1718466061.8991952,
+    "data": {
+      "timestamp": "2024-06-15T15:41:01.898440478Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466061.9079425,
+    "publish_time": 1718466061.9006627,
+    "data": {
+      "timestamp": "2024-06-15T15:41:01.900027671Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466061.9084358,
+    "publish_time": 1718466061.9021213,
+    "data": {
+      "timestamp": "2024-06-15T15:41:01.901354329Z",
+      "value": "$GPGSV,4,1,15,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*64\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466061.9088569,
+    "publish_time": 1718466061.902594,
+    "data": {
+      "timestamp": "2024-06-15T15:41:01.902459274Z",
+      "value": "$GPGSV,4,2,15,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466061.909089,
+    "publish_time": 1718466061.9028535,
+    "data": {
+      "timestamp": "2024-06-15T15:41:01.902721190Z",
+      "value": "$GPGSV,4,3,15,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466061.9093282,
+    "publish_time": 1718466061.9031048,
+    "data": {
+      "timestamp": "2024-06-15T15:41:01.902978380Z",
+      "value": "$GPGSV,4,4,15,28,28,047,,31,35,085,,32,,,,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466061.9096508,
+    "publish_time": 1718466061.9033258,
+    "data": {
+      "timestamp": "2024-06-15T15:41:01.903212957Z",
+      "value": "$GPGGA,154101.91,,,,,0,,,,,,,,*40\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466061.9098988,
+    "publish_time": 1718466061.903568,
+    "data": {
+      "timestamp": "2024-06-15T15:41:01.903435789Z",
+      "value": "$GNGNS,154101.91,,,,,NNN,,,,,,*3B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466061.9101315,
+    "publish_time": 1718466061.9038239,
+    "data": {
+      "timestamp": "2024-06-15T15:41:01.903696869Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466061.9104295,
+    "publish_time": 1718466061.9040747,
+    "data": {
+      "timestamp": "2024-06-15T15:41:01.903947811Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466061.9107206,
+    "publish_time": 1718466061.904389,
+    "data": {
+      "timestamp": "2024-06-15T15:41:01.904203940Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466061.9109983,
+    "publish_time": 1718466061.9047556,
+    "data": {
+      "timestamp": "2024-06-15T15:41:01.904574267Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466062.9087944,
+    "publish_time": 1718466062.8957238,
+    "data": {
+      "timestamp": "2024-06-15T15:41:02.894591131Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466062.910029,
+    "publish_time": 1718466062.8978615,
+    "data": {
+      "timestamp": "2024-06-15T15:41:02.896915787Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466062.912289,
+    "publish_time": 1718466062.899381,
+    "data": {
+      "timestamp": "2024-06-15T15:41:02.898621114Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466062.9124923,
+    "publish_time": 1718466062.9008079,
+    "data": {
+      "timestamp": "2024-06-15T15:41:02.900118299Z",
+      "value": "$GPGSV,4,1,15,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*64\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466062.9126997,
+    "publish_time": 1718466062.902214,
+    "data": {
+      "timestamp": "2024-06-15T15:41:02.901465461Z",
+      "value": "$GPGSV,4,2,15,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466062.9128525,
+    "publish_time": 1718466062.9024909,
+    "data": {
+      "timestamp": "2024-06-15T15:41:02.902365255Z",
+      "value": "$GPGSV,4,3,15,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466062.9130092,
+    "publish_time": 1718466062.9027472,
+    "data": {
+      "timestamp": "2024-06-15T15:41:02.902617524Z",
+      "value": "$GPGSV,4,4,15,28,28,047,,31,35,085,,32,,,,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466062.9131536,
+    "publish_time": 1718466062.9029994,
+    "data": {
+      "timestamp": "2024-06-15T15:41:02.902871337Z",
+      "value": "$GPGGA,154102.91,,,,,0,,,,,,,,*43\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466062.9133008,
+    "publish_time": 1718466062.9032605,
+    "data": {
+      "timestamp": "2024-06-15T15:41:02.903127688Z",
+      "value": "$GNGNS,154102.91,,,,,NNN,,,,,,*38\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466062.9134836,
+    "publish_time": 1718466062.9035215,
+    "data": {
+      "timestamp": "2024-06-15T15:41:02.903391707Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466062.913661,
+    "publish_time": 1718466062.9037845,
+    "data": {
+      "timestamp": "2024-06-15T15:41:02.903657644Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466062.9138145,
+    "publish_time": 1718466062.9040363,
+    "data": {
+      "timestamp": "2024-06-15T15:41:02.903906522Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466062.9140034,
+    "publish_time": 1718466062.9043303,
+    "data": {
+      "timestamp": "2024-06-15T15:41:02.904160373Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466063.904655,
+    "publish_time": 1718466063.8957527,
+    "data": {
+      "timestamp": "2024-06-15T15:41:03.895395440Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466063.9050026,
+    "publish_time": 1718466063.897422,
+    "data": {
+      "timestamp": "2024-06-15T15:41:03.897229870Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466063.9055343,
+    "publish_time": 1718466063.8979108,
+    "data": {
+      "timestamp": "2024-06-15T15:41:03.897751341Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466063.905921,
+    "publish_time": 1718466063.8984032,
+    "data": {
+      "timestamp": "2024-06-15T15:41:03.898208474Z",
+      "value": "$GPGSV,4,1,15,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*64\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466063.906337,
+    "publish_time": 1718466063.8988483,
+    "data": {
+      "timestamp": "2024-06-15T15:41:03.898656533Z",
+      "value": "$GPGSV,4,2,15,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466063.90666,
+    "publish_time": 1718466063.8992703,
+    "data": {
+      "timestamp": "2024-06-15T15:41:03.899062785Z",
+      "value": "$GPGSV,4,3,15,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466063.90697,
+    "publish_time": 1718466063.899643,
+    "data": {
+      "timestamp": "2024-06-15T15:41:03.899450488Z",
+      "value": "$GPGSV,4,4,15,28,28,047,,31,35,085,,32,,,,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466063.907279,
+    "publish_time": 1718466063.9000008,
+    "data": {
+      "timestamp": "2024-06-15T15:41:03.899828410Z",
+      "value": "$GPGGA,154103.91,,,,,0,,,,,,,,*42\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466063.9075532,
+    "publish_time": 1718466063.9004378,
+    "data": {
+      "timestamp": "2024-06-15T15:41:03.900230235Z",
+      "value": "$GNGNS,154103.91,,,,,NNN,,,,,,*39\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466063.9077954,
+    "publish_time": 1718466063.9009132,
+    "data": {
+      "timestamp": "2024-06-15T15:41:03.900713637Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466063.908042,
+    "publish_time": 1718466063.9014528,
+    "data": {
+      "timestamp": "2024-06-15T15:41:03.901270229Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466063.9082897,
+    "publish_time": 1718466063.901964,
+    "data": {
+      "timestamp": "2024-06-15T15:41:03.901780047Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466063.9084866,
+    "publish_time": 1718466063.9024158,
+    "data": {
+      "timestamp": "2024-06-15T15:41:03.902231694Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466064.9191859,
+    "publish_time": 1718466064.8968086,
+    "data": {
+      "timestamp": "2024-06-15T15:41:04.895692115Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466064.9203644,
+    "publish_time": 1718466064.8982992,
+    "data": {
+      "timestamp": "2024-06-15T15:41:04.897515265Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466064.9222872,
+    "publish_time": 1718466064.899872,
+    "data": {
+      "timestamp": "2024-06-15T15:41:04.899093203Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466064.9238677,
+    "publish_time": 1718466064.9012673,
+    "data": {
+      "timestamp": "2024-06-15T15:41:04.900605294Z",
+      "value": "$GPGSV,4,1,15,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*64\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466064.925792,
+    "publish_time": 1718466064.902721,
+    "data": {
+      "timestamp": "2024-06-15T15:41:04.901972412Z",
+      "value": "$GPGSV,4,2,15,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466064.927816,
+    "publish_time": 1718466064.9041066,
+    "data": {
+      "timestamp": "2024-06-15T15:41:04.903362307Z",
+      "value": "$GPGSV,4,3,15,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466064.9286442,
+    "publish_time": 1718466064.9055424,
+    "data": {
+      "timestamp": "2024-06-15T15:41:04.904837741Z",
+      "value": "$GPGSV,4,4,15,28,28,047,,31,35,085,,32,,,,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466064.9298248,
+    "publish_time": 1718466064.9070115,
+    "data": {
+      "timestamp": "2024-06-15T15:41:04.906262359Z",
+      "value": "$GPGGA,154104.91,,,,,0,,,,,,,,*45\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466064.931047,
+    "publish_time": 1718466064.9084494,
+    "data": {
+      "timestamp": "2024-06-15T15:41:04.907756617Z",
+      "value": "$GNGNS,154104.91,,,,,NNN,,,,,,*3E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466064.9324276,
+    "publish_time": 1718466064.9098632,
+    "data": {
+      "timestamp": "2024-06-15T15:41:04.909141295Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466064.9336514,
+    "publish_time": 1718466064.9112384,
+    "data": {
+      "timestamp": "2024-06-15T15:41:04.910492820Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466064.9347744,
+    "publish_time": 1718466064.912689,
+    "data": {
+      "timestamp": "2024-06-15T15:41:04.911885640Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466064.9358191,
+    "publish_time": 1718466064.9141998,
+    "data": {
+      "timestamp": "2024-06-15T15:41:04.913377901Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466065.9057057,
+    "publish_time": 1718466065.8963282,
+    "data": {
+      "timestamp": "2024-06-15T15:41:05.895252849Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466065.9063616,
+    "publish_time": 1718466065.8978896,
+    "data": {
+      "timestamp": "2024-06-15T15:41:05.897128736Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466065.906605,
+    "publish_time": 1718466065.8993242,
+    "data": {
+      "timestamp": "2024-06-15T15:41:05.898602291Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466065.9070585,
+    "publish_time": 1718466065.9003353,
+    "data": {
+      "timestamp": "2024-06-15T15:41:05.900059489Z",
+      "value": "$GPGSV,4,1,15,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*64\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466065.9074125,
+    "publish_time": 1718466065.9005797,
+    "data": {
+      "timestamp": "2024-06-15T15:41:05.900441206Z",
+      "value": "$GPGSV,4,2,15,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466065.9077923,
+    "publish_time": 1718466065.900818,
+    "data": {
+      "timestamp": "2024-06-15T15:41:05.900687963Z",
+      "value": "$GPGSV,4,3,15,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466065.9078963,
+    "publish_time": 1718466065.9010677,
+    "data": {
+      "timestamp": "2024-06-15T15:41:05.900940127Z",
+      "value": "$GPGSV,4,4,15,28,28,047,,31,35,085,,32,,,,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466065.908173,
+    "publish_time": 1718466065.9013205,
+    "data": {
+      "timestamp": "2024-06-15T15:41:05.901190802Z",
+      "value": "$GPGGA,154105.91,,,,,0,,,,,,,,*44\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466065.90852,
+    "publish_time": 1718466065.9015768,
+    "data": {
+      "timestamp": "2024-06-15T15:41:05.901441858Z",
+      "value": "$GNGNS,154105.91,,,,,NNN,,,,,,*3F\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466065.9088187,
+    "publish_time": 1718466065.9018269,
+    "data": {
+      "timestamp": "2024-06-15T15:41:05.901698704Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466065.9091535,
+    "publish_time": 1718466065.9020767,
+    "data": {
+      "timestamp": "2024-06-15T15:41:05.901948656Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466065.9094622,
+    "publish_time": 1718466065.9023933,
+    "data": {
+      "timestamp": "2024-06-15T15:41:05.902198982Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466065.9097264,
+    "publish_time": 1718466065.9027507,
+    "data": {
+      "timestamp": "2024-06-15T15:41:05.902569776Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466066.8996437,
+    "publish_time": 1718466066.8960726,
+    "data": {
+      "timestamp": "2024-06-15T15:41:06.894908359Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466066.9114313,
+    "publish_time": 1718466066.9022264,
+    "data": {
+      "timestamp": "2024-06-15T15:41:06.901274371Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466066.9115212,
+    "publish_time": 1718466066.9038286,
+    "data": {
+      "timestamp": "2024-06-15T15:41:06.903045829Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466066.9118497,
+    "publish_time": 1718466066.9052196,
+    "data": {
+      "timestamp": "2024-06-15T15:41:06.904545538Z",
+      "value": "$GPGSV,4,1,15,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*64\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466066.9120748,
+    "publish_time": 1718466066.9064608,
+    "data": {
+      "timestamp": "2024-06-15T15:41:06.905954479Z",
+      "value": "$GPGSV,4,2,15,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466066.9125,
+    "publish_time": 1718466066.9067152,
+    "data": {
+      "timestamp": "2024-06-15T15:41:06.906591801Z",
+      "value": "$GPGSV,4,3,15,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466066.9130337,
+    "publish_time": 1718466066.906955,
+    "data": {
+      "timestamp": "2024-06-15T15:41:06.906826529Z",
+      "value": "$GPGSV,4,4,15,28,28,047,,31,35,085,,32,,,,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466066.9135454,
+    "publish_time": 1718466066.9072137,
+    "data": {
+      "timestamp": "2024-06-15T15:41:06.907083886Z",
+      "value": "$GPGGA,154106.91,,,,,0,,,,,,,,*47\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466066.914059,
+    "publish_time": 1718466066.9074645,
+    "data": {
+      "timestamp": "2024-06-15T15:41:06.907336881Z",
+      "value": "$GNGNS,154106.91,,,,,NNN,,,,,,*3C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466066.914544,
+    "publish_time": 1718466066.907722,
+    "data": {
+      "timestamp": "2024-06-15T15:41:06.907593587Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466066.9150832,
+    "publish_time": 1718466066.9079726,
+    "data": {
+      "timestamp": "2024-06-15T15:41:06.907844489Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466066.9155505,
+    "publish_time": 1718466066.9082224,
+    "data": {
+      "timestamp": "2024-06-15T15:41:06.908095716Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466066.9160826,
+    "publish_time": 1718466066.9090202,
+    "data": {
+      "timestamp": "2024-06-15T15:41:06.908836197Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466067.9011986,
+    "publish_time": 1718466067.8990092,
+    "data": {
+      "timestamp": "2024-06-15T15:41:07.897863803Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466067.910605,
+    "publish_time": 1718466067.9007056,
+    "data": {
+      "timestamp": "2024-06-15T15:41:07.899786339Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466067.9109209,
+    "publish_time": 1718466067.9021575,
+    "data": {
+      "timestamp": "2024-06-15T15:41:07.901451658Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466067.9112256,
+    "publish_time": 1718466067.9032679,
+    "data": {
+      "timestamp": "2024-06-15T15:41:07.902716475Z",
+      "value": "$GPGSV,4,1,15,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*64\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466067.9115448,
+    "publish_time": 1718466067.9035044,
+    "data": {
+      "timestamp": "2024-06-15T15:41:07.903402928Z",
+      "value": "$GPGSV,4,2,15,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466067.9118223,
+    "publish_time": 1718466067.903714,
+    "data": {
+      "timestamp": "2024-06-15T15:41:07.903611433Z",
+      "value": "$GPGSV,4,3,15,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466067.9120374,
+    "publish_time": 1718466067.9039114,
+    "data": {
+      "timestamp": "2024-06-15T15:41:07.903809877Z",
+      "value": "$GPGSV,4,4,15,28,28,047,,31,35,085,,32,,,,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466067.912369,
+    "publish_time": 1718466067.9041157,
+    "data": {
+      "timestamp": "2024-06-15T15:41:07.904012111Z",
+      "value": "$GPGGA,154107.91,,,,,0,,,,,,,,*46\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466067.9128766,
+    "publish_time": 1718466067.9046934,
+    "data": {
+      "timestamp": "2024-06-15T15:41:07.904529524Z",
+      "value": "$GNGNS,154107.91,,,,,NNN,,,,,,*3D\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466067.9133966,
+    "publish_time": 1718466067.9055934,
+    "data": {
+      "timestamp": "2024-06-15T15:41:07.905422278Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466067.9140677,
+    "publish_time": 1718466067.9063938,
+    "data": {
+      "timestamp": "2024-06-15T15:41:07.906221608Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466067.914491,
+    "publish_time": 1718466067.9073143,
+    "data": {
+      "timestamp": "2024-06-15T15:41:07.907161556Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466067.915123,
+    "publish_time": 1718466067.9080484,
+    "data": {
+      "timestamp": "2024-06-15T15:41:07.907896049Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466068.911667,
+    "publish_time": 1718466068.8971298,
+    "data": {
+      "timestamp": "2024-06-15T15:41:08.896067830Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466068.9140258,
+    "publish_time": 1718466068.8982978,
+    "data": {
+      "timestamp": "2024-06-15T15:41:08.897729165Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466068.914822,
+    "publish_time": 1718466068.8993917,
+    "data": {
+      "timestamp": "2024-06-15T15:41:08.898842164Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466068.9155438,
+    "publish_time": 1718466068.9004812,
+    "data": {
+      "timestamp": "2024-06-15T15:41:08.899936725Z",
+      "value": "$GPGSV,5,1,19,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*69\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466068.9158163,
+    "publish_time": 1718466068.9013376,
+    "data": {
+      "timestamp": "2024-06-15T15:41:08.901007725Z",
+      "value": "$GPGSV,5,2,19,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*68\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466068.9160333,
+    "publish_time": 1718466068.9015353,
+    "data": {
+      "timestamp": "2024-06-15T15:41:08.901432667Z",
+      "value": "$GPGSV,5,3,19,19,34,268,,21,05,154,,25,12,008,,26,,,,1*57\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466068.9162347,
+    "publish_time": 1718466068.9017382,
+    "data": {
+      "timestamp": "2024-06-15T15:41:08.901634976Z",
+      "value": "$GPGSV,5,4,19,28,28,047,,31,35,085,,32,,,,33,,,35,1*60\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466068.9163978,
+    "publish_time": 1718466068.9019358,
+    "data": {
+      "timestamp": "2024-06-15T15:41:08.901833386Z",
+      "value": "$GPGSV,5,5,19,38,,,35,39,,,35,41,,,34,1*6F\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466068.916639,
+    "publish_time": 1718466068.902446,
+    "data": {
+      "timestamp": "2024-06-15T15:41:08.902292973Z",
+      "value": "$GPGGA,154108.91,,,,,0,,,,,,,,*49\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466068.9168408,
+    "publish_time": 1718466068.9033403,
+    "data": {
+      "timestamp": "2024-06-15T15:41:08.903169323Z",
+      "value": "$GNGNS,154108.91,,,,,NNN,,,,,,*32\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466068.9170868,
+    "publish_time": 1718466068.9042735,
+    "data": {
+      "timestamp": "2024-06-15T15:41:08.904109047Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466068.9172575,
+    "publish_time": 1718466068.9050438,
+    "data": {
+      "timestamp": "2024-06-15T15:41:08.904878665Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466068.917509,
+    "publish_time": 1718466068.9056866,
+    "data": {
+      "timestamp": "2024-06-15T15:41:08.905516882Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466068.9176903,
+    "publish_time": 1718466068.9067378,
+    "data": {
+      "timestamp": "2024-06-15T15:41:08.906571693Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466069.9072442,
+    "publish_time": 1718466069.8950078,
+    "data": {
+      "timestamp": "2024-06-15T15:41:09.893940433Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466069.9076238,
+    "publish_time": 1718466069.8961875,
+    "data": {
+      "timestamp": "2024-06-15T15:41:09.895607317Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466069.907921,
+    "publish_time": 1718466069.8973415,
+    "data": {
+      "timestamp": "2024-06-15T15:41:09.896732151Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466069.9084408,
+    "publish_time": 1718466069.8984354,
+    "data": {
+      "timestamp": "2024-06-15T15:41:09.897892791Z",
+      "value": "$GPGSV,5,1,19,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*69\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466069.9087474,
+    "publish_time": 1718466069.8993666,
+    "data": {
+      "timestamp": "2024-06-15T15:41:09.898980001Z",
+      "value": "$GPGSV,5,2,19,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*68\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466069.9091578,
+    "publish_time": 1718466069.8995678,
+    "data": {
+      "timestamp": "2024-06-15T15:41:09.899462391Z",
+      "value": "$GPGSV,5,3,19,19,34,268,,21,05,154,,25,12,008,,26,,,,1*57\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466069.9095361,
+    "publish_time": 1718466069.899765,
+    "data": {
+      "timestamp": "2024-06-15T15:41:09.899664112Z",
+      "value": "$GPGSV,5,4,19,28,28,047,,31,35,085,,32,,,,33,,,35,1*60\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466069.9098473,
+    "publish_time": 1718466069.8999603,
+    "data": {
+      "timestamp": "2024-06-15T15:41:09.899859279Z",
+      "value": "$GPGSV,5,5,19,38,,,35,39,,,35,41,,,34,1*6F\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466069.910168,
+    "publish_time": 1718466069.9004557,
+    "data": {
+      "timestamp": "2024-06-15T15:41:09.900302210Z",
+      "value": "$GPGGA,154109.91,,,,,0,,,,,,,,*48\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466069.9104242,
+    "publish_time": 1718466069.9013555,
+    "data": {
+      "timestamp": "2024-06-15T15:41:09.901203150Z",
+      "value": "$GNGNS,154109.91,,,,,NNN,,,,,,*33\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466069.9106631,
+    "publish_time": 1718466069.9023488,
+    "data": {
+      "timestamp": "2024-06-15T15:41:09.902197271Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466069.9108756,
+    "publish_time": 1718466069.9031847,
+    "data": {
+      "timestamp": "2024-06-15T15:41:09.903071692Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466069.91112,
+    "publish_time": 1718466069.9039083,
+    "data": {
+      "timestamp": "2024-06-15T15:41:09.903743721Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466069.9113047,
+    "publish_time": 1718466069.9047818,
+    "data": {
+      "timestamp": "2024-06-15T15:41:09.904617042Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466070.9058516,
+    "publish_time": 1718466070.8954298,
+    "data": {
+      "timestamp": "2024-06-15T15:41:10.894722646Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466070.9062114,
+    "publish_time": 1718466070.896517,
+    "data": {
+      "timestamp": "2024-06-15T15:41:10.895960474Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466070.906579,
+    "publish_time": 1718466070.8978512,
+    "data": {
+      "timestamp": "2024-06-15T15:41:10.897271901Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466070.9068582,
+    "publish_time": 1718466070.898772,
+    "data": {
+      "timestamp": "2024-06-15T15:41:10.898214534Z",
+      "value": "$GPGSV,5,1,19,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*69\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466070.9070673,
+    "publish_time": 1718466070.899792,
+    "data": {
+      "timestamp": "2024-06-15T15:41:10.899243911Z",
+      "value": "$GPGSV,5,2,19,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*68\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466070.9074442,
+    "publish_time": 1718466070.900783,
+    "data": {
+      "timestamp": "2024-06-15T15:41:10.900280127Z",
+      "value": "$GPGSV,5,3,19,19,34,268,,21,05,154,,25,12,008,,26,,,,1*57\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466070.907867,
+    "publish_time": 1718466070.90182,
+    "data": {
+      "timestamp": "2024-06-15T15:41:10.901312489Z",
+      "value": "$GPGSV,5,4,19,28,28,047,,31,35,085,,32,,,,33,,,35,1*60\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466070.908409,
+    "publish_time": 1718466070.902351,
+    "data": {
+      "timestamp": "2024-06-15T15:41:10.902248311Z",
+      "value": "$GPGSV,5,5,19,38,,,35,39,,,35,41,,,34,1*6F\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466070.9089773,
+    "publish_time": 1718466070.9025478,
+    "data": {
+      "timestamp": "2024-06-15T15:41:10.902446136Z",
+      "value": "$GPGGA,154110.91,,,,,0,,,,,,,,*40\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466070.9095538,
+    "publish_time": 1718466070.902761,
+    "data": {
+      "timestamp": "2024-06-15T15:41:10.902657381Z",
+      "value": "$GNGNS,154110.91,,,,,NNN,,,,,,*3B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466070.910139,
+    "publish_time": 1718466070.902957,
+    "data": {
+      "timestamp": "2024-06-15T15:41:10.902855427Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466070.9108174,
+    "publish_time": 1718466070.9031653,
+    "data": {
+      "timestamp": "2024-06-15T15:41:10.903051209Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466070.9114058,
+    "publish_time": 1718466070.9033642,
+    "data": {
+      "timestamp": "2024-06-15T15:41:10.903263029Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466070.9118063,
+    "publish_time": 1718466070.9036772,
+    "data": {
+      "timestamp": "2024-06-15T15:41:10.903566484Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466071.9091725,
+    "publish_time": 1718466071.8977888,
+    "data": {
+      "timestamp": "2024-06-15T15:41:11.896653189Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466071.9093924,
+    "publish_time": 1718466071.899055,
+    "data": {
+      "timestamp": "2024-06-15T15:41:11.898380369Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466071.9096875,
+    "publish_time": 1718466071.9002473,
+    "data": {
+      "timestamp": "2024-06-15T15:41:11.899610406Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466071.9101224,
+    "publish_time": 1718466071.901428,
+    "data": {
+      "timestamp": "2024-06-15T15:41:11.900806769Z",
+      "value": "$GPGSV,6,1,21,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*61\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466071.9102118,
+    "publish_time": 1718466071.9023151,
+    "data": {
+      "timestamp": "2024-06-15T15:41:11.901998288Z",
+      "value": "$GPGSV,6,2,21,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*60\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466071.9105897,
+    "publish_time": 1718466071.902514,
+    "data": {
+      "timestamp": "2024-06-15T15:41:11.902411595Z",
+      "value": "$GPGSV,6,3,21,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5F\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466071.91099,
+    "publish_time": 1718466071.90272,
+    "data": {
+      "timestamp": "2024-06-15T15:41:11.902616986Z",
+      "value": "$GPGSV,6,4,21,28,28,047,,31,35,085,,32,,,,33,,,35,1*68\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466071.9113462,
+    "publish_time": 1718466071.9029162,
+    "data": {
+      "timestamp": "2024-06-15T15:41:11.902815461Z",
+      "value": "$GPGSV,6,5,21,38,,,35,39,,,35,40,,,35,41,,,34,1*65\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466071.911629,
+    "publish_time": 1718466071.9031115,
+    "data": {
+      "timestamp": "2024-06-15T15:41:11.903010374Z",
+      "value": "$GPGSV,6,6,21,42,,,34,1*66\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466071.9118888,
+    "publish_time": 1718466071.903322,
+    "data": {
+      "timestamp": "2024-06-15T15:41:11.903218806Z",
+      "value": "$GPGGA,154111.91,,,,,0,,,,,,,,*41\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466071.9121647,
+    "publish_time": 1718466071.9035184,
+    "data": {
+      "timestamp": "2024-06-15T15:41:11.903416550Z",
+      "value": "$GNGNS,154111.91,,,,,NNN,,,,,,*3A\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466071.9124458,
+    "publish_time": 1718466071.9046218,
+    "data": {
+      "timestamp": "2024-06-15T15:41:11.904424343Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466071.9126544,
+    "publish_time": 1718466071.9055083,
+    "data": {
+      "timestamp": "2024-06-15T15:41:11.905346123Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466071.9128828,
+    "publish_time": 1718466071.9059565,
+    "data": {
+      "timestamp": "2024-06-15T15:41:11.905806194Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466071.9131255,
+    "publish_time": 1718466071.9064057,
+    "data": {
+      "timestamp": "2024-06-15T15:41:11.906253853Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466072.908484,
+    "publish_time": 1718466072.8982396,
+    "data": {
+      "timestamp": "2024-06-15T15:41:12.897119766Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466072.9086022,
+    "publish_time": 1718466072.8995414,
+    "data": {
+      "timestamp": "2024-06-15T15:41:12.898894166Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466072.9089599,
+    "publish_time": 1718466072.9007876,
+    "data": {
+      "timestamp": "2024-06-15T15:41:12.900120071Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466072.9093287,
+    "publish_time": 1718466072.90198,
+    "data": {
+      "timestamp": "2024-06-15T15:41:12.901317020Z",
+      "value": "$GPGSV,6,1,22,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*62\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466072.9098852,
+    "publish_time": 1718466072.9024303,
+    "data": {
+      "timestamp": "2024-06-15T15:41:12.902327807Z",
+      "value": "$GPGSV,6,2,22,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*63\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466072.9102926,
+    "publish_time": 1718466072.9026518,
+    "data": {
+      "timestamp": "2024-06-15T15:41:12.902533785Z",
+      "value": "$GPGSV,6,3,22,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466072.910551,
+    "publish_time": 1718466072.9028504,
+    "data": {
+      "timestamp": "2024-06-15T15:41:12.902748134Z",
+      "value": "$GPGSV,6,4,22,28,28,047,,31,35,085,,32,,,,33,,,35,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466072.9108646,
+    "publish_time": 1718466072.9030454,
+    "data": {
+      "timestamp": "2024-06-15T15:41:12.902944627Z",
+      "value": "$GPGSV,6,5,22,38,,,35,39,,,35,40,,,35,41,,,34,1*66\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466072.9112055,
+    "publish_time": 1718466072.9032407,
+    "data": {
+      "timestamp": "2024-06-15T15:41:12.903139411Z",
+      "value": "$GPGSV,6,6,22,42,,,34,46,,,34,1*60\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466072.9114778,
+    "publish_time": 1718466072.903437,
+    "data": {
+      "timestamp": "2024-06-15T15:41:12.903335596Z",
+      "value": "$GPGGA,154112.91,,,,,0,,,,,,,,*42\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466072.9117215,
+    "publish_time": 1718466072.9036489,
+    "data": {
+      "timestamp": "2024-06-15T15:41:12.903530391Z",
+      "value": "$GNGNS,154112.91,,,,,NNN,,,,,,*39\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466072.911981,
+    "publish_time": 1718466072.9038439,
+    "data": {
+      "timestamp": "2024-06-15T15:41:12.903743778Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466072.9122133,
+    "publish_time": 1718466072.9040377,
+    "data": {
+      "timestamp": "2024-06-15T15:41:12.903937982Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466072.9125082,
+    "publish_time": 1718466072.9051952,
+    "data": {
+      "timestamp": "2024-06-15T15:41:12.904933447Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466072.9127526,
+    "publish_time": 1718466072.906071,
+    "data": {
+      "timestamp": "2024-06-15T15:41:12.905912424Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466073.91427,
+    "publish_time": 1718466073.9037142,
+    "data": {
+      "timestamp": "2024-06-15T15:41:13.902607214Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466073.9145873,
+    "publish_time": 1718466073.904996,
+    "data": {
+      "timestamp": "2024-06-15T15:41:13.904304412Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466073.9149265,
+    "publish_time": 1718466073.9061878,
+    "data": {
+      "timestamp": "2024-06-15T15:41:13.905525443Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466073.9152496,
+    "publish_time": 1718466073.9073625,
+    "data": {
+      "timestamp": "2024-06-15T15:41:13.906738531Z",
+      "value": "$GPGSV,6,1,22,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*62\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466073.915633,
+    "publish_time": 1718466073.9083579,
+    "data": {
+      "timestamp": "2024-06-15T15:41:13.907930668Z",
+      "value": "$GPGSV,6,2,22,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*63\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466073.916008,
+    "publish_time": 1718466073.9085612,
+    "data": {
+      "timestamp": "2024-06-15T15:41:13.908453662Z",
+      "value": "$GPGSV,6,3,22,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466073.9162097,
+    "publish_time": 1718466073.9087613,
+    "data": {
+      "timestamp": "2024-06-15T15:41:13.908659405Z",
+      "value": "$GPGSV,6,4,22,28,28,047,,31,35,085,,32,,,,33,,,35,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466073.9164896,
+    "publish_time": 1718466073.9089582,
+    "data": {
+      "timestamp": "2024-06-15T15:41:13.908856100Z",
+      "value": "$GPGSV,6,5,22,38,,,35,39,,,35,40,,,35,41,,,34,1*66\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466073.9168162,
+    "publish_time": 1718466073.909175,
+    "data": {
+      "timestamp": "2024-06-15T15:41:13.909059242Z",
+      "value": "$GPGSV,6,6,22,42,,,34,46,,,34,1*60\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466073.9171245,
+    "publish_time": 1718466073.9093745,
+    "data": {
+      "timestamp": "2024-06-15T15:41:13.909272148Z",
+      "value": "$GPGGA,154113.91,,,,,0,,,,,,,,*43\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466073.9173985,
+    "publish_time": 1718466073.9095786,
+    "data": {
+      "timestamp": "2024-06-15T15:41:13.909469439Z",
+      "value": "$GNGNS,154113.91,,,,,NNN,,,,,,*38\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466073.9174762,
+    "publish_time": 1718466073.9097753,
+    "data": {
+      "timestamp": "2024-06-15T15:41:13.909674312Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466073.917706,
+    "publish_time": 1718466073.909971,
+    "data": {
+      "timestamp": "2024-06-15T15:41:13.909869495Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466073.9179308,
+    "publish_time": 1718466073.9108336,
+    "data": {
+      "timestamp": "2024-06-15T15:41:13.910572586Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466073.9181323,
+    "publish_time": 1718466073.9116964,
+    "data": {
+      "timestamp": "2024-06-15T15:41:13.911526693Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466074.9113922,
+    "publish_time": 1718466074.9010487,
+    "data": {
+      "timestamp": "2024-06-15T15:41:14.899950250Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466074.9120398,
+    "publish_time": 1718466074.9023435,
+    "data": {
+      "timestamp": "2024-06-15T15:41:14.901680654Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466074.9124532,
+    "publish_time": 1718466074.9035478,
+    "data": {
+      "timestamp": "2024-06-15T15:41:14.902914038Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466074.912967,
+    "publish_time": 1718466074.9048035,
+    "data": {
+      "timestamp": "2024-06-15T15:41:14.904127563Z",
+      "value": "$GPGSV,6,1,22,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*62\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466074.9134219,
+    "publish_time": 1718466074.9055002,
+    "data": {
+      "timestamp": "2024-06-15T15:41:14.905334746Z",
+      "value": "$GPGSV,6,2,22,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*63\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466074.9137504,
+    "publish_time": 1718466074.905709,
+    "data": {
+      "timestamp": "2024-06-15T15:41:14.905606016Z",
+      "value": "$GPGSV,6,3,22,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466074.9140768,
+    "publish_time": 1718466074.905906,
+    "data": {
+      "timestamp": "2024-06-15T15:41:14.905804510Z",
+      "value": "$GPGSV,6,4,22,28,28,047,,31,35,085,,32,,,,33,,,35,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466074.9143727,
+    "publish_time": 1718466074.906102,
+    "data": {
+      "timestamp": "2024-06-15T15:41:14.906000847Z",
+      "value": "$GPGSV,6,5,22,38,,,35,39,,,35,40,,,35,41,,,34,1*66\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466074.9146879,
+    "publish_time": 1718466074.9062958,
+    "data": {
+      "timestamp": "2024-06-15T15:41:14.906195782Z",
+      "value": "$GPGSV,6,6,22,42,,,34,46,,,34,1*60\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466074.915069,
+    "publish_time": 1718466074.9065027,
+    "data": {
+      "timestamp": "2024-06-15T15:41:14.906389591Z",
+      "value": "$GPGGA,154114.91,,,,,0,,,,,,,,*44\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466074.91538,
+    "publish_time": 1718466074.9067237,
+    "data": {
+      "timestamp": "2024-06-15T15:41:14.906607746Z",
+      "value": "$GNGNS,154114.91,,,,,NNN,,,,,,*3F\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466074.91568,
+    "publish_time": 1718466074.906923,
+    "data": {
+      "timestamp": "2024-06-15T15:41:14.906821117Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466074.9160485,
+    "publish_time": 1718466074.9073946,
+    "data": {
+      "timestamp": "2024-06-15T15:41:14.907133755Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466074.916292,
+    "publish_time": 1718466074.907802,
+    "data": {
+      "timestamp": "2024-06-15T15:41:14.907626641Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466074.9166212,
+    "publish_time": 1718466074.908838,
+    "data": {
+      "timestamp": "2024-06-15T15:41:14.908539141Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466075.9082296,
+    "publish_time": 1718466075.8962097,
+    "data": {
+      "timestamp": "2024-06-15T15:41:15.895010274Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466075.9087512,
+    "publish_time": 1718466075.8979113,
+    "data": {
+      "timestamp": "2024-06-15T15:41:15.897092157Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466075.9093983,
+    "publish_time": 1718466075.8994167,
+    "data": {
+      "timestamp": "2024-06-15T15:41:15.898703054Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466075.9099615,
+    "publish_time": 1718466075.9004521,
+    "data": {
+      "timestamp": "2024-06-15T15:41:15.900256945Z",
+      "value": "$GPGSV,6,1,22,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*62\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466075.9103677,
+    "publish_time": 1718466075.900747,
+    "data": {
+      "timestamp": "2024-06-15T15:41:15.900597267Z",
+      "value": "$GPGSV,6,2,22,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*63\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466075.9107964,
+    "publish_time": 1718466075.9010246,
+    "data": {
+      "timestamp": "2024-06-15T15:41:15.900877449Z",
+      "value": "$GPGSV,6,3,22,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466075.9111736,
+    "publish_time": 1718466075.9012988,
+    "data": {
+      "timestamp": "2024-06-15T15:41:15.901151813Z",
+      "value": "$GPGSV,6,4,22,28,28,047,,31,35,085,,32,,,,33,,,35,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466075.9115136,
+    "publish_time": 1718466075.9015858,
+    "data": {
+      "timestamp": "2024-06-15T15:41:15.901431355Z",
+      "value": "$GPGSV,6,5,22,38,,,35,39,,,35,40,,,35,41,,,34,1*66\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466075.9119337,
+    "publish_time": 1718466075.9018657,
+    "data": {
+      "timestamp": "2024-06-15T15:41:15.901719694Z",
+      "value": "$GPGSV,6,6,22,42,,,34,46,,,34,1*60\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466075.9121866,
+    "publish_time": 1718466075.9021378,
+    "data": {
+      "timestamp": "2024-06-15T15:41:15.901992428Z",
+      "value": "$GPGGA,154115.91,,,,,0,,,,,,,,*45\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466075.9124916,
+    "publish_time": 1718466075.9032478,
+    "data": {
+      "timestamp": "2024-06-15T15:41:15.903052247Z",
+      "value": "$GNGNS,154115.91,,,,,NNN,,,,,,*3E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466075.912836,
+    "publish_time": 1718466075.9041135,
+    "data": {
+      "timestamp": "2024-06-15T15:41:15.903827328Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466075.9131725,
+    "publish_time": 1718466075.904859,
+    "data": {
+      "timestamp": "2024-06-15T15:41:15.904579531Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466075.9134119,
+    "publish_time": 1718466075.9055877,
+    "data": {
+      "timestamp": "2024-06-15T15:41:15.905287500Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466075.9136124,
+    "publish_time": 1718466075.9060662,
+    "data": {
+      "timestamp": "2024-06-15T15:41:15.905818138Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466076.899191,
+    "publish_time": 1718466076.8969102,
+    "data": {
+      "timestamp": "2024-06-15T15:41:16.895744910Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466076.9052958,
+    "publish_time": 1718466076.8985212,
+    "data": {
+      "timestamp": "2024-06-15T15:41:16.897661292Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466076.9063041,
+    "publish_time": 1718466076.899983,
+    "data": {
+      "timestamp": "2024-06-15T15:41:16.899248201Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466076.9064586,
+    "publish_time": 1718466076.9011626,
+    "data": {
+      "timestamp": "2024-06-15T15:41:16.900552075Z",
+      "value": "$GPGSV,6,1,22,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*62\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466076.9065933,
+    "publish_time": 1718466076.9014745,
+    "data": {
+      "timestamp": "2024-06-15T15:41:16.901371458Z",
+      "value": "$GPGSV,6,2,22,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*63\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466076.9067018,
+    "publish_time": 1718466076.9016836,
+    "data": {
+      "timestamp": "2024-06-15T15:41:16.901578660Z",
+      "value": "$GPGSV,6,3,22,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466076.9067976,
+    "publish_time": 1718466076.9018924,
+    "data": {
+      "timestamp": "2024-06-15T15:41:16.901787714Z",
+      "value": "$GPGSV,6,4,22,28,28,047,,31,35,085,,32,,,,33,,,35,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466076.907284,
+    "publish_time": 1718466076.9020908,
+    "data": {
+      "timestamp": "2024-06-15T15:41:16.901988436Z",
+      "value": "$GPGSV,6,5,22,38,,,35,39,,,35,40,,,35,41,,,34,1*66\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466076.9073865,
+    "publish_time": 1718466076.9022903,
+    "data": {
+      "timestamp": "2024-06-15T15:41:16.902187416Z",
+      "value": "$GPGSV,6,6,22,42,,,34,46,,,34,1*60\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466076.907679,
+    "publish_time": 1718466076.903553,
+    "data": {
+      "timestamp": "2024-06-15T15:41:16.903384945Z",
+      "value": "$GPGGA,154116.91,,,,,0,,,,,,,,*46\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466076.909685,
+    "publish_time": 1718466076.9049618,
+    "data": {
+      "timestamp": "2024-06-15T15:41:16.904756570Z",
+      "value": "$GNGNS,154116.91,,,,,NNN,,,,,,*3D\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466076.9099658,
+    "publish_time": 1718466076.9055781,
+    "data": {
+      "timestamp": "2024-06-15T15:41:16.905308338Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466076.91035,
+    "publish_time": 1718466076.9060116,
+    "data": {
+      "timestamp": "2024-06-15T15:41:16.905796348Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466076.910589,
+    "publish_time": 1718466076.9070923,
+    "data": {
+      "timestamp": "2024-06-15T15:41:16.906699864Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466076.910836,
+    "publish_time": 1718466076.9076154,
+    "data": {
+      "timestamp": "2024-06-15T15:41:16.907380005Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466077.9075062,
+    "publish_time": 1718466077.8962438,
+    "data": {
+      "timestamp": "2024-06-15T15:41:17.895138174Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466077.907955,
+    "publish_time": 1718466077.897492,
+    "data": {
+      "timestamp": "2024-06-15T15:41:17.896857295Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466077.9084587,
+    "publish_time": 1718466077.8987312,
+    "data": {
+      "timestamp": "2024-06-15T15:41:17.898053187Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466077.9087925,
+    "publish_time": 1718466077.8999188,
+    "data": {
+      "timestamp": "2024-06-15T15:41:17.899255766Z",
+      "value": "$GPGSV,6,1,22,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*62\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466077.9091265,
+    "publish_time": 1718466077.9004722,
+    "data": {
+      "timestamp": "2024-06-15T15:41:17.900369099Z",
+      "value": "$GPGSV,6,2,22,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*63\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466077.9093227,
+    "publish_time": 1718466077.9006903,
+    "data": {
+      "timestamp": "2024-06-15T15:41:17.900585171Z",
+      "value": "$GPGSV,6,3,22,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466077.9095137,
+    "publish_time": 1718466077.9008899,
+    "data": {
+      "timestamp": "2024-06-15T15:41:17.900787268Z",
+      "value": "$GPGSV,6,4,22,28,28,047,,31,35,085,,32,,,,33,,,35,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466077.9097507,
+    "publish_time": 1718466077.9010863,
+    "data": {
+      "timestamp": "2024-06-15T15:41:17.900984498Z",
+      "value": "$GPGSV,6,5,22,38,,,35,39,,,35,40,,,35,41,,,34,1*66\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466077.909974,
+    "publish_time": 1718466077.9012818,
+    "data": {
+      "timestamp": "2024-06-15T15:41:17.901181693Z",
+      "value": "$GPGSV,6,6,22,42,,,34,46,,,34,1*60\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466077.9101975,
+    "publish_time": 1718466077.9016473,
+    "data": {
+      "timestamp": "2024-06-15T15:41:17.901476016Z",
+      "value": "$GPGGA,154117.91,,,,,0,,,,,,,,*47\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466077.910432,
+    "publish_time": 1718466077.9023638,
+    "data": {
+      "timestamp": "2024-06-15T15:41:17.902189891Z",
+      "value": "$GNGNS,154117.91,,,,,NNN,,,,,,*3C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466077.9106805,
+    "publish_time": 1718466077.9032662,
+    "data": {
+      "timestamp": "2024-06-15T15:41:17.903064152Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466077.9108915,
+    "publish_time": 1718466077.904286,
+    "data": {
+      "timestamp": "2024-06-15T15:41:17.904094964Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466077.9110749,
+    "publish_time": 1718466077.904712,
+    "data": {
+      "timestamp": "2024-06-15T15:41:17.904565124Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466077.911262,
+    "publish_time": 1718466077.9051416,
+    "data": {
+      "timestamp": "2024-06-15T15:41:17.905008490Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466078.918845,
+    "publish_time": 1718466078.8958652,
+    "data": {
+      "timestamp": "2024-06-15T15:41:18.894895196Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466078.9205027,
+    "publish_time": 1718466078.8969758,
+    "data": {
+      "timestamp": "2024-06-15T15:41:18.896378022Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466078.9221878,
+    "publish_time": 1718466078.8981934,
+    "data": {
+      "timestamp": "2024-06-15T15:41:18.897616565Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466078.924037,
+    "publish_time": 1718466078.8993816,
+    "data": {
+      "timestamp": "2024-06-15T15:41:18.898766411Z",
+      "value": "$GPGSV,6,1,22,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*62\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466078.9254248,
+    "publish_time": 1718466078.900599,
+    "data": {
+      "timestamp": "2024-06-15T15:41:18.899945011Z",
+      "value": "$GPGSV,6,2,22,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*63\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466078.9264228,
+    "publish_time": 1718466078.9017954,
+    "data": {
+      "timestamp": "2024-06-15T15:41:18.901143356Z",
+      "value": "$GPGSV,6,3,22,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466078.9275277,
+    "publish_time": 1718466078.9029574,
+    "data": {
+      "timestamp": "2024-06-15T15:41:18.902314397Z",
+      "value": "$GPGSV,6,4,22,28,28,047,,31,35,085,,32,,,,33,,,35,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466078.9289227,
+    "publish_time": 1718466078.9041483,
+    "data": {
+      "timestamp": "2024-06-15T15:41:18.903490819Z",
+      "value": "$GPGSV,6,5,22,38,,,35,39,,,35,40,,,35,41,,,34,1*66\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466078.9299636,
+    "publish_time": 1718466078.905339,
+    "data": {
+      "timestamp": "2024-06-15T15:41:18.904706239Z",
+      "value": "$GPGSV,6,6,22,42,,,34,46,,,34,1*60\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466078.9313161,
+    "publish_time": 1718466078.906513,
+    "data": {
+      "timestamp": "2024-06-15T15:41:18.905889810Z",
+      "value": "$GPGGA,154118.91,,,,,0,,,,,,,,*48\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466078.9326563,
+    "publish_time": 1718466078.907722,
+    "data": {
+      "timestamp": "2024-06-15T15:41:18.907059968Z",
+      "value": "$GNGNS,154118.91,,,,,NNN,,,,,,*33\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466078.9335089,
+    "publish_time": 1718466078.9088962,
+    "data": {
+      "timestamp": "2024-06-15T15:41:18.908239897Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466078.9344122,
+    "publish_time": 1718466078.9100566,
+    "data": {
+      "timestamp": "2024-06-15T15:41:18.909411572Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466078.9350183,
+    "publish_time": 1718466078.9111433,
+    "data": {
+      "timestamp": "2024-06-15T15:41:18.910585166Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466078.935609,
+    "publish_time": 1718466078.9122949,
+    "data": {
+      "timestamp": "2024-06-15T15:41:18.911725251Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466079.9191372,
+    "publish_time": 1718466079.897215,
+    "data": {
+      "timestamp": "2024-06-15T15:41:19.896107843Z",
+      "value": "$GLGSV,3,1,11,78,26,026,,70,66,239,,86,47,307,,77,04,331,,1*76\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466079.9212065,
+    "publish_time": 1718466079.8985188,
+    "data": {
+      "timestamp": "2024-06-15T15:41:19.897861508Z",
+      "value": "$GLGSV,3,2,11,79,18,081,,69,42,060,,84,08,170,,87,04,336,,1*77\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466079.922373,
+    "publish_time": 1718466079.89978,
+    "data": {
+      "timestamp": "2024-06-15T15:41:19.899110542Z",
+      "value": "$GLGSV,3,3,11,85,54,208,,71,16,239,,68,,,,1*79\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466079.9242537,
+    "publish_time": 1718466079.9011471,
+    "data": {
+      "timestamp": "2024-06-15T15:41:19.900521300Z",
+      "value": "$GPGSV,6,1,22,02,18,160,,03,73,120,,04,52,191,,06,35,300,,1*62\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466079.9256663,
+    "publish_time": 1718466079.902357,
+    "data": {
+      "timestamp": "2024-06-15T15:41:19.901773341Z",
+      "value": "$GPGSV,6,2,22,09,18,216,,11,00,314,,12,11,340,,17,26,240,,1*63\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466079.926923,
+    "publish_time": 1718466079.9036226,
+    "data": {
+      "timestamp": "2024-06-15T15:41:19.903004579Z",
+      "value": "$GPGSV,6,3,22,19,34,268,,21,05,154,,25,12,008,,26,,,,1*5C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466079.9285533,
+    "publish_time": 1718466079.9048254,
+    "data": {
+      "timestamp": "2024-06-15T15:41:19.904236592Z",
+      "value": "$GPGSV,6,4,22,28,28,047,,31,35,085,,32,,,,33,,,35,1*6B\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466079.9299207,
+    "publish_time": 1718466079.9060175,
+    "data": {
+      "timestamp": "2024-06-15T15:41:19.905417545Z",
+      "value": "$GPGSV,6,5,22,38,,,35,39,,,35,40,,,35,41,,,34,1*66\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466079.930952,
+    "publish_time": 1718466079.9071991,
+    "data": {
+      "timestamp": "2024-06-15T15:41:19.906642076Z",
+      "value": "$GPGSV,6,6,22,42,,,34,46,,,34,1*60\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466079.9321327,
+    "publish_time": 1718466079.9083571,
+    "data": {
+      "timestamp": "2024-06-15T15:41:19.907813204Z",
+      "value": "$GPGGA,154119.91,,,,,0,,,,,,,,*49\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466079.9336157,
+    "publish_time": 1718466079.90951,
+    "data": {
+      "timestamp": "2024-06-15T15:41:19.908966800Z",
+      "value": "$GNGNS,154119.91,,,,,NNN,,,,,,*32\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466079.9344292,
+    "publish_time": 1718466079.9107027,
+    "data": {
+      "timestamp": "2024-06-15T15:41:19.910113545Z",
+      "value": "$GPVTG,,T,,M,,N,,K,N*2C\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466079.9358606,
+    "publish_time": 1718466079.9118302,
+    "data": {
+      "timestamp": "2024-06-15T15:41:19.911217522Z",
+      "value": "$GPRMC,,V,,,,,,,,,,N*53\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466079.937097,
+    "publish_time": 1718466079.912942,
+    "data": {
+      "timestamp": "2024-06-15T15:41:19.912363524Z",
+      "value": "$GPGSA,A,1,,,,,,,,,,,,,,,*1E\r\n"
+    }
+  },
+  {
+    "topic": "rise/v0/boatswain/pubsub/raw_string/rutx",
+    "sequence": 0,
+    "log_time": 1718466079.9383788,
+    "publish_time": 1718466079.9140897,
+    "data": {
+      "timestamp": "2024-06-15T15:41:19.913445755Z",
+      "value": "$GNGSA,A,1,,,,,,,,,,,,,,,*00\r\n"
+    }
+  }
+]
