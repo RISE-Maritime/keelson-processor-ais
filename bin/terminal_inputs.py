@@ -49,11 +49,18 @@ def terminal_inputs():
         help="Entity being a unique id representing an entity within the realm ex, landkrabba",
     )
 
-
+    parser.add_argument(
+        "--subscribe",
+        choices=["sjofartsverket", "digitraffic"],
+        type=str,
+        required=True,
+        action="append",
+        help="The keelson AIS data source to subscribe to, allowing multiple sources by specifying multiple subscribers.",
+    )
 
     parser.add_argument(
         "--publish",
-        choices=["log", "sjv"],
+        choices=["log"],
         type=str,
         required=False,
         action="append",

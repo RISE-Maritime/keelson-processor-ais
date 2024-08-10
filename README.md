@@ -2,7 +2,7 @@
 
 TODO: Processor tasks:
 
- - Parsing raw AIS messages from Sjöfartverker, Digitrafik & Kystverket to Keelson protobuffer message format protobuffer
+- [ ] Parsing raw AIS messages from Sjöfartverker (DONE), Digitrafik (TODO) & Kystverket to Keelson protobuffer message format and publishing formatted data
    - Only for area of intrest (needs dynamic update) 
    - Output format Target 
 - AIS data validation 
@@ -18,7 +18,7 @@ TODO: Processor tasks:
 ## Quick start
 
 ```bash
-python3 bin/main.py --log-level 10 -r rise -e ted -s ais_processor  --publish log --publish sjv 
+python3 bin/main.py --log-level 10 -r rise -e ted --publish log --subscribe sjofartsverket 
 ```
 
 

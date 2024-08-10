@@ -8,16 +8,15 @@ import json
 import keelson
 from terminal_inputs import terminal_inputs
 from keelson.payloads.TimestampedBytes_pb2 import TimestampedBytes
-from keelson.payloads.Target_pb2 import Target, TargetDescription
+from keelson.payloads.Target_pb2 import Target, TargetDescription, DataSource
 import pyais
 
-from utilitis import set_navigation_status_enum, set_target_type_enum, position_to_common_center_point
+from utilitis import set_navigation_status_enum, set_target_type_enum, position_to_common_center_point, filterAIS, rot_fix, publish_message
 
 session = None
 args = None
-pub_target = None
-pub_target_description = None
 
+# Storing AIS dimensions for each MMSI for position correction
 AIS_DB = {
     "example": {
         "to_bow": 50,
@@ -28,32 +27,12 @@ AIS_DB = {
 }
 
 
-def filterAIS(msg):
-    # Filter out AIS messages
-
-    # TYPE 4: Base Station Report
-    # TYPE 8: Binary Broadcast Message
-    # TYPE 9: Standard SAR Aircraft Position Report
-    # TYPE 20: Data Link Management
-    # TYPE 21: Aid-to-Navigation Report
-    # TYPE 27: Long Range AIS Broadcast message
-    if msg.msg_type in [0, 4, 8, 9, 20, 21, 27]:
-        return False
-
-    return True
-
-
-def rot_fix(rot):
-    if 127 >= rot <= -127:
-        rot = 0
-        return rot
-    else:
-        return rot
-
-
 def sub_sjv_data(data):
 
     received_at, enclosed_at, content = keelson.uncover(data.payload)
+    # logging.debug(f"Received at: {received_at} | Enclosed at: {enclosed_at} type {type(enclosed_at)}" )
+
+
     # logging.debug(f"Received on: {data.key_expr}")
     time_value = TimestampedBytes.FromString(content)
     # logging.debug(f"Received data: {time_value}")
@@ -69,7 +48,11 @@ def sub_sjv_data(data):
 
             if filterAIS(decoded):
                 payload_target = Target()
+                payload_target.data_source.source.append(DataSource.Source.AIS_PROVIDER)
+                payload_target.timestamp.FromNanoseconds(enclosed_at)
                 payload_target_description = TargetDescription()
+                payload_target_description.data_source.source.append(DataSource.Source.AIS_PROVIDER)
+                payload_target_description.timestamp.FromNanoseconds(enclosed_at)
 
                 # MMSI
                 payload_target.mmsi = decoded.mmsi
@@ -81,7 +64,7 @@ def sub_sjv_data(data):
 
                     # NAVIGATIONN STATUS
                     status = decoded.status.value
-                    payload_target_description.navigation_status = set_navigation_status_enum(
+                    payload_target.navigation_status = set_navigation_status_enum(
                         status)
                     # logging.debug(f"Payload_target_description: {TargetDescription.NavigationStatus.Name(payload_target_description.navigation_status)}")
 
@@ -102,6 +85,9 @@ def sub_sjv_data(data):
                         payload_target.latitude_degrees = decoded.lat
                         payload_target.longitude_degrees = decoded.lon
 
+                    publish_message(payload_target, "target",
+                                    decoded.mmsi, session, args, logging)
+
                 # TYPE 18: Standard Class B CS Position Report
                 elif decoded.msg_type in [18]:
 
@@ -110,6 +96,8 @@ def sub_sjv_data(data):
                     payload_target.latitude_degrees = decoded.lat
                     payload_target.course_over_ground_knots = decoded.course
                     payload_target.heading_degrees = decoded.heading
+                    publish_message(
+                        payload_target, "target", decoded.mmsi, session, args, logging)
 
                 elif decoded.msg_type in [24]:  # TYPE 24: Static Data Report
                     json_decoded = decoded.to_json()
@@ -142,59 +130,32 @@ def sub_sjv_data(data):
                             "to_starboard": decoded.to_starboard,
                             "to_port": decoded.to_port,
                         }
+                    publish_message(payload_target_description, "target_description",
+                                    decoded.mmsi, session, args, logging)
 
                 else:
                     logging.debug(f"Decoded AIS message: {decoded}")
 
-                logging.debug(f"Target: {payload_target}")
-
-                #################################################
-                # Setting up PUBLISHER
-
-                # Target publisher
-                key_exp_pub_target = keelson.construct_pub_sub_key(
-                    realm=args.realm,
-                    entity_id=args.entity_id,
-                    subject="target",  # Needs to be a supported subject
-                    source_id="ais/"+str(decoded.mmsi),
-                )
-                pub_target = session.declare_publisher(
-                    key_exp_pub_target,
-                    priority=zenoh.Priority.BACKGROUND(),
-                    congestion_control=zenoh.CongestionControl.DROP(),
-                )
-                logging.info(f"Created publisher: {key_exp_pub_target}")
-
-                # Publish the target
-                serialized_payload_target = payload_target.SerializeToString()
-                envelope_target = keelson.enclose(serialized_payload_target)
-                pub_target.put(envelope_target)
-
-
-
-                # Target description publisher
-                key_exp_pub_target_description = keelson.construct_pub_sub_key(
-                    realm=args.realm,
-                    entity_id=args.entity_id,
-                    subject="target_description",  # Needs to be a supported subject
-                    source_id="ais/"+str(decoded.mmsi),
-                )
-                pub_target_description = session.declare_publisher(
-                    key_exp_pub_target_description,
-                    priority=zenoh.Priority.BACKGROUND(),
-                    congestion_control=zenoh.CongestionControl.DROP(),
-                )
-                logging.info(f"Created publisher: {key_exp_pub_target_description}")
-                logging.debug(f"Description: {payload_target_description}")
-                # Publish the target description
-                serialized_payload_target_description = payload_target_description.SerializeToString()
-                envelope_target_description = keelson.enclose(
-                    serialized_payload_target_description)
-                pub_target_description.put(envelope_target_description)
-
-
         except Exception as e:
             logging.warning(f"Error parsing AIS: {e}")
+
+
+def sub_digitraffic_data(data):
+    logging.debug(f"Received on: {data.key_expr}")
+
+    # logging.debug(f"Received data: {data.payload}") # Receiving plain json
+    json_string = data.payload.decode('utf-8')
+
+    # Convert the JSON string to a dictionary
+    data_dict = json.loads(json_string)
+
+    if str(data.key_expr).split("/")[-1] == "metadata":
+        logging.debug(f"Metadata: {data_dict}")
+
+    elif str(data.key_expr).split("/")[-1] == "location":
+        logging.debug(f"Location: {data_dict}")
+    else:
+        logging.warning(f"Unknown data: {data_dict}")
 
 
 if __name__ == "__main__":
@@ -222,27 +183,33 @@ if __name__ == "__main__":
     atexit.register(_on_exit)
     logging.info(f"Zenoh session established: {session.info()}")
 
- 
     #################################################
     # Setting up SUBSCRIBERs
 
     # Sjöfartsverket AIS subscriber
-    key_exp_pub_raw = keelson.construct_pub_sub_key(
-        realm=args.realm,
-        entity_id="sjofartsverket",
-        subject="raw/ais/nmea0183",  # Needs to be a supported subject
-        source_id="**",
-    )
-    sub_raw = session.declare_subscriber(
-        key_exp_pub_raw,
-        sub_sjv_data,
-    )
-    logging.debug(f"Subscribing to: {key_exp_pub_raw}")
+    if "sjofartsverket" in args.subscribe:
+        key_exp_pub_sjv = keelson.construct_pub_sub_key(
+            realm=args.realm,
+            entity_id="sjofartsverket",
+            subject="raw/ais/nmea0183",  # Needs to be a supported subject
+            source_id="**",
+        )
+        sub_sjv = session.declare_subscriber(
+            key_exp_pub_sjv,
+            sub_sjv_data,
+        )
+        logging.debug(f"Subscribing to: {key_exp_pub_sjv}")
 
-    # try:
-
-      
-    # except KeyboardInterrupt:
-    #     logging.info("Closing down on user request!")
-    #     # Close the socket
-    #     logging.debug("Done! Good bye :)")
+    # Digitraffic subscriber
+    if "digitraffic" in args.subscribe:
+        key_exp_pub_digitraffic = keelson.construct_pub_sub_key(
+            realm=args.realm,
+            entity_id="digitraffic",
+            subject="raw/ais/json/vessels-v2",  # Needs to be a supported subject
+            source_id="**",
+        )
+        sub_digitraffic = session.declare_subscriber(
+            key_exp_pub_digitraffic,
+            sub_digitraffic_data,
+        )
+        logging.debug(f"Subscribing to: {key_exp_pub_digitraffic}")
