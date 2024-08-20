@@ -19,6 +19,7 @@ TODO: Processor tasks:
 
 ```bash
 python3 bin/main.py --log-level 10 -r rise -e ted --publish log --subscribe sjofartsverket 
+python3 bin/main.py --log-level 10 -r rise -e ted --publish log --subscribe digitraffic 
 ```
 
 

@@ -10,7 +10,7 @@ from terminal_inputs import terminal_inputs
 from keelson.payloads.TimestampedBytes_pb2 import TimestampedBytes
 from keelson.payloads.Target_pb2 import Target, TargetDescription, DataSource
 import pyais
-
+import time
 from utilitis import set_navigation_status_enum, set_target_type_enum, position_to_common_center_point, filterAIS, rot_fix, publish_message
 
 session = None
@@ -72,6 +72,8 @@ def sub_sjv_data(data):
                     rot = pyais.messages.from_turn(decoded.turn)
                     rot = rot_fix(rot)
                     payload_target.rate_of_turn_degrees_per_minute = rot
+
+                    # SOG, COG, HDG
                     payload_target.speed_over_ground_knots = decoded.speed
                     payload_target.course_over_ground_knots = decoded.course
                     payload_target.heading_degrees = decoded.heading
@@ -148,14 +150,55 @@ def sub_digitraffic_data(data):
 
     # Convert the JSON string to a dictionary
     data_dict = json.loads(json_string)
+    
+    time_now = time.time_ns()
+    payload_target = Target()
+    payload_target.data_source.source.append(DataSource.Source.AIS_PROVIDER)
+    payload_target.timestamp.FromNanoseconds(time_now)
+    payload_target_description = TargetDescription()
+    payload_target_description.data_source.source.append(DataSource.Source.AIS_PROVIDER)
+    payload_target_description.timestamp.FromNanoseconds(time_now)
 
-    if str(data.key_expr).split("/")[-1] == "metadata":
+    # MMSI
+    mmsi = str(data.key_expr).split("/")[-2]
+    payload_target.mmsi = int(mmsi)
+    payload_target_description.mmsi = int(mmsi)
+    
+
+
+    if str(data.key_expr).split("/")[-1] == "location":
+        logging.debug(f"Location: {data_dict}")
+
+        # NAVIGATIONN STATUS
+        status = data_dict.navStat
+        payload_target.navigation_status = set_navigation_status_enum(status)
+
+        # ROT, SOG, COG, HDG
+        payload_target.rate_of_turn_degrees_per_minute = data_dict.rot
+        payload_target.speed_over_ground_knots = data_dict.sog
+        payload_target.course_over_ground_knots = data_dict.cog
+        payload_target.heading_degrees = data_dict.heading
+
+        if AIS_DB.get(str(mmsi)):
+            latitude_adj, longitude_adj = position_to_common_center_point(data_dict.lat, data_dict.lon, data_dict.heading, AIS_DB[str(
+                mmsi)]["to_bow"], AIS_DB[str(mmsi)]["to_stern"], AIS_DB[str(mmsi)]["to_port"], AIS_DB[str(mmsi)]["to_starboard"])
+            payload_target.latitude_degrees = latitude_adj
+            payload_target.longitude_degrees = longitude_adj
+        
+        else:
+            payload_target.latitude_degrees = data_dict.lat
+            payload_target.longitude_degrees = data_dict.lon
+
+        publish_message(payload_target, "target", mmsi, session, args, logging)
+
+    elif str(data.key_expr).split("/")[-1] == "metadata":
         logging.debug(f"Metadata: {data_dict}")
 
-    elif str(data.key_expr).split("/")[-1] == "location":
-        logging.debug(f"Location: {data_dict}")
     else:
         logging.warning(f"Unknown data: {data_dict}")
+
+
+
 
 
 if __name__ == "__main__":
