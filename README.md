@@ -23,7 +23,11 @@ python3 bin/main.py --log-level 10 -r rise -e ted --publish log --subscribe digi
 ```
 
 
+## Record 
 
+```bash
+sudo docker run --rm --network host  --name mcap-logger --volume ~/rec:/rec ghcr.io/rise-maritime/keelson:0.3.7-pre.51 "mcap-record --output_path rec -k rise/v0/ted/**"
+```
 
 
 
