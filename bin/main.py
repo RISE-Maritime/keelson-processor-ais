@@ -9,9 +9,10 @@ import keelson
 from terminal_inputs import terminal_inputs
 from keelson.payloads.TimestampedBytes_pb2 import TimestampedBytes
 from keelson.payloads.Target_pb2 import Target, TargetDescription, DataSource
+from keelson.payloads.LocationFix_pb2 import LocationFix
 import pyais
 import time
-from utilitis import set_navigation_status_enum, set_target_type_enum, position_to_common_center_point, filterAIS, rot_fix, publish_message
+from utilitis import set_navigation_status_enum, set_target_type_enum, position_to_common_center_point, filterAIS, rot_fix, publish_message, position_within_boundary
 
 session = None
 args = None
@@ -23,6 +24,7 @@ AIS_DB = {
         "to_stern": 50,
         "to_starboard": 10,
         "to_port": 10,
+        "position_within_boundary": True
     },
 }
 
@@ -31,7 +33,6 @@ def sub_sjv_data(data):
 
     received_at, enclosed_at, content = keelson.uncover(data.payload)
     # logging.debug(f"Received at: {received_at} | Enclosed at: {enclosed_at} type {type(enclosed_at)}" )
-
 
     # logging.debug(f"Received on: {data.key_expr}")
     time_value = TimestampedBytes.FromString(content)
@@ -48,11 +49,14 @@ def sub_sjv_data(data):
 
             if filterAIS(decoded):
                 payload_target = Target()
-                payload_target.data_source.source.append(DataSource.Source.AIS_PROVIDER)
+                payload_target.data_source.source.append(
+                    DataSource.Source.AIS_PROVIDER)
                 payload_target.timestamp.FromNanoseconds(enclosed_at)
                 payload_target_description = TargetDescription()
-                payload_target_description.data_source.source.append(DataSource.Source.AIS_PROVIDER)
-                payload_target_description.timestamp.FromNanoseconds(enclosed_at)
+                payload_target_description.data_source.source.append(
+                    DataSource.Source.AIS_PROVIDER)
+                payload_target_description.timestamp.FromNanoseconds(
+                    enclosed_at)
 
                 # MMSI
                 payload_target.mmsi = decoded.mmsi
@@ -87,8 +91,20 @@ def sub_sjv_data(data):
                         payload_target.latitude_degrees = decoded.lat
                         payload_target.longitude_degrees = decoded.lon
 
-                    publish_message(payload_target, "target",
-                                    decoded.mmsi, session, args, logging)
+                    # Managing AIS within area of interest
+                    if position_within_boundary(payload_target.latitude_degrees, payload_target.longitude_degrees, args):
+                        # for AIS position correction
+                        AIS_DB[str(decoded.mmsi)] = {
+                            **AIS_DB[str(decoded.mmsi)],
+                            "position_within_boundary": True
+                        }
+                        publish_message(payload_target, "target",
+                                        decoded.mmsi, session, args, logging)
+                    else:
+                        AIS_DB[str(decoded.mmsi)] = {
+                            **AIS_DB[str(decoded.mmsi)],
+                            "position_within_boundary": False
+                        }
 
                 # TYPE 18: Standard Class B CS Position Report
                 elif decoded.msg_type in [18]:
@@ -98,8 +114,21 @@ def sub_sjv_data(data):
                     payload_target.latitude_degrees = decoded.lat
                     payload_target.course_over_ground_knots = decoded.course
                     payload_target.heading_degrees = decoded.heading
-                    publish_message(
-                        payload_target, "target", decoded.mmsi, session, args, logging)
+
+                    # Managing AIS within area of interest
+                    if position_within_boundary(payload_target.latitude_degrees, payload_target.longitude_degrees, args):
+                        # for AIS position correction
+                        AIS_DB[str(decoded.mmsi)] = {
+                            **AIS_DB[str(decoded.mmsi)],
+                            "position_within_boundary": True
+                        }
+                        publish_message(
+                            payload_target, "target", decoded.mmsi, session, args, logging)
+                    else:
+                        AIS_DB[str(decoded.mmsi)] = {
+                            **AIS_DB[str(decoded.mmsi)],
+                            "position_within_boundary": False
+                        }
 
                 elif decoded.msg_type in [24]:  # TYPE 24: Static Data Report
                     json_decoded = decoded.to_json()
@@ -132,8 +161,11 @@ def sub_sjv_data(data):
                             "to_starboard": decoded.to_starboard,
                             "to_port": decoded.to_port,
                         }
-                    publish_message(payload_target_description, "target_description",
-                                    decoded.mmsi, session, args, logging)
+
+                    # Managing AIS within area of interest
+                    if AIS_DB[str(decoded.mmsi)].position_within_boundary:
+                        publish_message(payload_target_description, "target_description",
+                                        decoded.mmsi, session, args, logging)
 
                 else:
                     logging.debug(f"Decoded AIS message: {decoded}")
@@ -150,23 +182,20 @@ def sub_digitraffic_data(data):
 
     # Convert the JSON string to a dictionary
     data_dict = json.loads(json_string)
-    
+
     time_now = time.time_ns()
     payload_target = Target()
     payload_target.data_source.source.append(DataSource.Source.AIS_PROVIDER)
     payload_target.timestamp.FromNanoseconds(time_now)
     payload_target_description = TargetDescription()
-    payload_target_description.data_source.source.append(DataSource.Source.AIS_PROVIDER)
+    payload_target_description.data_source.source.append(
+        DataSource.Source.AIS_PROVIDER)
     payload_target_description.timestamp.FromNanoseconds(time_now)
-
-
-    
-
 
     if str(data.key_expr).split("/")[-1] == "location":
 
-        logging.debug(f"Location: {data_dict}")
-        
+        # logging.debug(f"Location: {data_dict}")
+
         mmsi = str(data.key_expr).split("/")[-2]
         payload_target.mmsi = int(mmsi)
 
@@ -180,17 +209,48 @@ def sub_digitraffic_data(data):
         payload_target.course_over_ground_knots = data_dict["cog"]
         payload_target.heading_degrees = data_dict["heading"]
 
-        if AIS_DB.get(str(mmsi)):
-            latitude_adj, longitude_adj = position_to_common_center_point(data_dict["lat"], data_dict["lon"], data_dict["heading"], AIS_DB[str(
-                mmsi)]["to_bow"], AIS_DB[str(mmsi)]["to_stern"], AIS_DB[str(mmsi)]["to_port"], AIS_DB[str(mmsi)]["to_starboard"])
-            payload_target.latitude_degrees = latitude_adj
-            payload_target.longitude_degrees = longitude_adj
+
+        # Correcting AIS position if vessel outline is available
+        if str(mmsi) in AIS_DB:
+            if "to_stern" in AIS_DB[str(mmsi)].keys():
+                logging.debug(f"Adjusting position for MMSI: {mmsi}")
+                latitude_adj, longitude_adj = position_to_common_center_point(data_dict["lat"], data_dict["lon"], data_dict["heading"], AIS_DB[str(
+                    mmsi)]["to_bow"], AIS_DB[str(mmsi)]["to_stern"], AIS_DB[str(mmsi)]["to_port"], AIS_DB[str(mmsi)]["to_starboard"])
+                payload_target.latitude_degrees = latitude_adj
+                payload_target.longitude_degrees = longitude_adj
+                
+                payload_target.position.latitude = latitude_adj
+                payload_target.position.longitude = longitude_adj
         
         else:
             payload_target.latitude_degrees = data_dict["lat"]
             payload_target.longitude_degrees = data_dict["lon"]
 
-        publish_message(payload_target, "target", mmsi, session, args, logging)
+        # Managing AIS within area of interest
+        if position_within_boundary(payload_target.latitude_degrees, payload_target.longitude_degrees, args):
+            # for AIS position correction
+
+            if str(mmsi) in AIS_DB:
+                AIS_DB[str(mmsi)] = {
+                    **AIS_DB[str(mmsi)],
+                    "position_within_boundary": True
+                }
+            else:
+                AIS_DB[str(mmsi)] = {
+                    "position_within_boundary": True
+                }
+            publish_message(
+                payload_target, "target", mmsi, session, args, logging)
+        else:
+            if str(mmsi) in AIS_DB:
+                AIS_DB[str(mmsi)] = {
+                    **AIS_DB[str(mmsi)],
+                    "position_within_boundary": False
+                }
+            else:
+                AIS_DB[str(mmsi)] = {
+                    "position_within_boundary": False
+                }
 
     elif str(data.key_expr).split("/")[-1] == "metadata":
         logging.debug(f"Metadata: {data_dict}")
@@ -202,7 +262,8 @@ def sub_digitraffic_data(data):
 
         payload_target_description.name = data_dict["name"]
         payload_target_description.callsign = data_dict["callSign"]
-        payload_target_description.vessel_type = set_target_type_enum(data_dict["type"])
+        payload_target_description.vessel_type = set_target_type_enum(
+            data_dict["type"])
         payload_target_description.imo = data_dict["imo"]
 
         width = data_dict["refC"] + data_dict["refD"]
@@ -220,24 +281,34 @@ def sub_digitraffic_data(data):
 
         payload_target_description.destination = data_dict["destination"]
         payload_target_description.draft_meters = data_dict["draught"]
-        payload_target_description.estimated_time_of_arrival = str(data_dict["eta"])
-        
-        # for AIS position correction
-        AIS_DB[str(mmsi)] = {
-            "to_bow": data_dict["refA"],
-            "to_stern": data_dict["refB"],
-            "to_starboard": data_dict["refD"],
-            "to_port": data_dict["refC"]
-        }
-        publish_message(payload_target_description, "target_description",
-                        mmsi, session, args, logging)
+        payload_target_description.estimated_time_of_arrival = str(
+            data_dict["eta"])
 
+        # for AIS position correction
+        if str(mmsi) in AIS_DB:
+            AIS_DB[str(mmsi)] = {
+                **AIS_DB[str(mmsi)],
+                "to_bow": data_dict["refA"],
+                "to_stern": data_dict["refB"],
+                "to_starboard": data_dict["refD"],
+                "to_port": data_dict["refC"]
+            }
+        else:
+            AIS_DB[str(mmsi)] = {
+                "to_bow": data_dict["refA"],
+                "to_stern": data_dict["refB"],
+                "to_starboard": data_dict["refD"],
+                "to_port": data_dict["refC"],
+                "position_within_boundary": False
+            }
+
+        # Managing AIS within area of interest
+        if AIS_DB[str(mmsi)]["position_within_boundary"]:
+            publish_message(payload_target_description, "target_description",
+                            mmsi, session, args, logging)
 
     else:
         logging.warning(f"Unknown data: {data_dict}")
-
-
-
 
 
 if __name__ == "__main__":

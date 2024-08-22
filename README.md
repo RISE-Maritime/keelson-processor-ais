@@ -29,7 +29,7 @@ python3 bin/main.py --log-level 10 -r rise -e ted --publish log --subscribe digi
 sudo docker run --rm --network host  --name mcap-logger --volume ~/rec:/rec ghcr.io/rise-maritime/keelson:0.3.7-pre.51 "mcap-record --output_path rec -k rise/v0/ted/**"
 ```
 
-
+ --mode client --connect tcp/10.10.7.2:7448
 
 
 Setup for development environment on your own computer: 

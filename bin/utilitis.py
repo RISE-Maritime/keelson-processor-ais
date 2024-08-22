@@ -157,3 +157,20 @@ def publish_message(payload, subject: str, mmsi, session, args, logging):
     serialized_payload_target = payload.SerializeToString()
     envelope_target = keelson.enclose(serialized_payload_target)
     pub_target.put(envelope_target)
+
+
+def position_within_boundary(latitude: float, longitude: float, args):
+    """
+    Check if a position is within the boundary
+
+    :param latitude: Latitude of the position
+    :param longitude: Longitude of the position
+    :param args: Arguments from the terminal
+    
+    :return: True if within boundary, False if outside boundary
+
+    """
+    if args.boundary_north >= latitude >= args.boundary_south and args.boundary_east >= longitude >= args.boundary_west:
+        return True
+    else:
+        return False

@@ -66,12 +66,41 @@ def terminal_inputs():
         action="append",
     )
 
-    parser.add_argument("-f",
-                        "--frame-id",
-                        type=str,
-                        default=None,
-                        required=False
-                        )
+    parser.add_argument(
+        "-bn",
+        "--boundary_north",
+        type=float,
+        required=False,
+        default=63.9,
+        help="Northern boundary of the area of interest",
+    )
+
+    parser.add_argument(
+        "-bs",
+        "--boundary_south",
+        type=float,
+        required=False,
+        default=62.8,
+        help="Southern boundary of the area of interest",
+    )
+
+    parser.add_argument(
+        "-be",
+        "--boundary_east",
+        type=float,
+        required=False,
+        default=21.7,
+        help="Eastern boundary of the area of interest",
+    )
+
+    parser.add_argument(
+        "-bw",
+        "--boundary_west",
+        type=float,
+        required=False,
+        default=20.293,
+        help="Western boundary of the area of interest",
+    )
 
     # Parse arguments and start doing our thing
     args = parser.parse_args()
