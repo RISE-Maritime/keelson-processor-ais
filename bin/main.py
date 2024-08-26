@@ -13,9 +13,11 @@ from keelson.payloads.LocationFix_pb2 import LocationFix
 import pyais
 import time
 from utilitis import set_navigation_status_enum, set_target_type_enum, position_to_common_center_point, filterAIS, rot_fix, publish_message, position_within_boundary
+import socket
 
 session = None
 args = None
+sock = None
 
 # Storing AIS dimensions for each MMSI for position correction
 AIS_DB = {
@@ -33,6 +35,19 @@ def sub_sjv_data(data):
 
     # Parse the NMEA0183 AIS data
     nmea_sentence = time_value.value.decode("utf-8")
+
+
+    if "udp_sjv" in args.publish:
+        # Define the UDP server address and port
+        server_address = ('127.0.0.1', 1830)
+        # Convert the nmea_sentence to bytes
+        nmea_sentence_bytes = nmea_sentence.encode('utf-8')
+        # Send the nmea_sentence to the UDP server
+        logging.debug(f"Sending NMEA sentence SENT")
+        sock.sendto(nmea_sentence_bytes, server_address)
+        # Close the socket
+       # sock.close()
+       
 
     if nmea_sentence.split(",")[0] not in ["!AIVDM", "$ABVSI"]:
         # logging.debug(f"Received NMEA sentence: {nmea_sentence}")
@@ -210,8 +225,8 @@ def sub_sjv_data(data):
                                                 decoded.mmsi, session, args, logging)
                                     
 
-                else:
-                    logging.debug(f"Decoded AIS message: {decoded}")
+                # else:
+                #     logging.debug(f"Decoded AIS message: {decoded}")
 
         except Exception as e:
             logging.warning(f"Error parsing AIS: {e}")
@@ -377,6 +392,9 @@ if __name__ == "__main__":
 
     atexit.register(_on_exit)
     logging.info(f"Zenoh session established: {session.info()}")
+
+    # UDP socket
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
     #################################################
     # Setting up SUBSCRIBERs

@@ -60,7 +60,7 @@ def terminal_inputs():
 
     parser.add_argument(
         "--publish",
-        choices=["log"],
+        choices=["log","udp_sjv"],
         type=str,
         required=False,
         action="append",
@@ -101,6 +101,8 @@ def terminal_inputs():
         default=20.293,
         help="Western boundary of the area of interest",
     )
+
+    
 
     # Parse arguments and start doing our thing
     args = parser.parse_args()

@@ -18,7 +18,7 @@ TODO: Processor tasks:
 ## Quick start
 
 ```bash
-python3 bin/main.py --log-level 10 -r rise -e ted --publish log --subscribe sjofartsverket 
+python3 bin/main.py --log-level 10 -r rise -e ted --publish udp_sjv --subscribe sjofartsverket 
 python3 bin/main.py --log-level 10 -r rise -e ted --publish log --subscribe digitraffic 
 ```
 
