@@ -1,10 +1,11 @@
 services:
 
   keelson-processor-ais:
-    build: .
+    # build: .
     image: ghcr.io/rise-maritime/keelson-processor-ais:latest
     container_name: keelson-processor-ais
     restart: unless-stopped
     network_mode: "host"
-    command: " --mode client --connect tcp/10.10.7.2:7448 --log-level 30 -r rise -e masslab --publish log --subscribe digitraffic "
+    # command: "--log-level 10 -r rise -e masslab --publish udp_sjv --subscribe sjofartsverket"
+    command: "--log-level 10 --publish udp_sjv --subscribe sjofartsverket"
     

@@ -26,7 +26,11 @@ python3 bin/main.py --log-level 10 -r rise -e ted --publish log --subscribe digi
 ## Record 
 
 ```bash
-sudo docker run --rm --network host  --name mcap-logger --volume ~/rec:/rec ghcr.io/rise-maritime/keelson:0.3.7-pre.51 "mcap-record --output_path rec -k rise/v0/ted/**"
+docker run --rm --network host --name ais-udp ghcr.io/rise-maritime/keelson-processor-ais:0.0.3 "keelson-processor-ais -r rise -e erik --publish udp_sjv --subscribe sjofartsverket"
+
+
+sudo docker run --rm --network host  --name mcap-logger --volume ~/rec:/rec ghcr.io/rise-maritime/keelson:0.3.7-pre.51 "keelson_processor_ais --output_path rec -k rise/v0/ted/**"
+
 ```
 
  --mode client --connect tcp/10.10.7.2:7448
@@ -67,3 +71,39 @@ Setup for development environment on your own computer:
 
 
 UDP 1830 
+
+
+
+## Start UDP AIS stream on port 1830
+
+Step 1: Set up configuration file
+
+- Make a folder for Keelson connectors and processors:
+  - Copy a docker compose file [docker-compose.ais-processor.yml](./docker-compose.ais-processor.yml) OR create a file with name "docker-compose.ais-processor.yml" and add content bellow 
+
+```yml
+services:
+
+  keelson-processor-ais:
+    image: ghcr.io/rise-maritime/keelson-processor-ais:latest
+    container_name: keelson-processor-ais
+    restart: unless-stopped
+    network_mode: "host"
+    command: "--log-level 10 --publish udp_sjv --subscribe sjofartsverket"
+```
+
+Step 2: Set up docker service configuration
+
+- Open a terminal and navigate to location where you created the file
+- Run following start up command in a terminal to start the service
+  
+  ```bash
+  docker compose -f docker-compose.ais-processor.yml up -d
+  ```
+
+- Docker images will be downloaded and service started 
+
+Step 3: Open Docker Desktop
+
+- Check if you can find the new service in docker desktop
+- From now on you can start and stop the service from docker desktop (You do not need to do the step 2 again)  
