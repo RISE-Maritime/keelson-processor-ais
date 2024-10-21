@@ -30,7 +30,7 @@ def terminal_inputs():
         "--connect",
         action="append",
         type=str,
-        help="Endpoints to connect to, in case multicast is not working.",
+        help="Endpoints to connect to, in case multicast is not working. ex. tcp/localhost:7447",
     )
 
     parser.add_argument(

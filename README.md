@@ -12,13 +12,13 @@ TODO: Processor tasks:
 
 
 
-
-
-
 ## Quick start
 
 ```bash
 python3 bin/main.py --log-level 10 -r rise -e ted --publish udp_sjv --subscribe sjofartsverket 
+
+python3 bin/main.py --log-level 20 -r rise -e erik --publish udp_sjv --subscribe sjofartsverket 
+
 python3 bin/main.py --log-level 10 -r rise -e ted --publish log --subscribe digitraffic 
 ```
 
@@ -63,3 +63,7 @@ Setup for development environment on your own computer:
 
 [Zenoh CLI for debugging and problem solving](https://github.com/RISE-Maritime/zenoh-cli)
 
+
+
+
+UDP 1830 

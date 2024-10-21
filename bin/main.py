@@ -130,7 +130,7 @@ def sub_sjv_data(data):
                 elif decoded.msg_type in [18]:
 
                     payload_target.speed_over_ground_knots = decoded.speed
-                    payload_target.longitude_degrees = decoded.lon
+                    payload_target.lpdecoded.lon
                     payload_target.latitude_degrees = decoded.lat
                     payload_target.course_over_ground_knots = decoded.course
                     payload_target.heading_degrees = decoded.heading
