@@ -1,5 +1,5 @@
 -r requirements.txt
-black==23.3.0
-pylint==2.17.4
-zenoh-cli
+black==25.1.0
+pylint==3.3.4
+zenoh-cli==0.6.3
 pandas

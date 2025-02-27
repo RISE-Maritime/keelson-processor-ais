@@ -10,7 +10,7 @@ TODO: Processor tasks:
 
 
 
-
+´´´´´´´´´
 
 ## Quick start
 
@@ -24,7 +24,7 @@ python3 bin/main.py --log-level 10 -r rise -e ted --publish log --subscribe digi
 
 
 ## Record 
-
+´´´´´
 ```bash
 docker run --rm --network host --name ais-udp ghcr.io/rise-maritime/keelson-processor-ais:0.0.3 "keelson-processor-ais -r rise -e erik --publish udp_sjv --subscribe sjofartsverket"
 
@@ -36,10 +36,10 @@ sudo docker run --rm --network host  --name mcap-logger --volume ~/rec:/rec ghcr
  --mode client --connect tcp/10.10.7.2:7448
 
 
-Setup for development environment on your own computer: 
+Setup for development environment on your own computer: ´
 
 1) Install [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/)
-   - Docker desktop will provide you with an UI for monitoring and controlling docker containers and images along debugging 
+   - Docker desktop will provide you with an UI ´´for monitoring and controlling docker containers and images along debugging 
    - If you want to learn more about docker and its building blocks of images and containers checkout [Docker quick hands-on in guide](https://docs.docker.com/guides/get-started/)
 2) Start up of **Zenoh router** either in your computer or any other computer within your local network 
 
