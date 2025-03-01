@@ -60,10 +60,18 @@ def terminal_inputs():
 
     parser.add_argument(
         "--publish",
-        choices=["log","udp_sjv"],
+        choices=["log","sjv_nmea_udp", "target"],
         type=str,
         required=False,
         action="append",
+    )
+
+    parser.add_argument(
+        "--udp-port",
+        type=int,
+        required=False,
+        default=10110,
+        help="UDP port to send NMEA data to",
     )
 
     parser.add_argument(

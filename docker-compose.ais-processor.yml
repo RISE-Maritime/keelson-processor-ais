@@ -7,7 +7,6 @@ services:
     restart: unless-stopped
     network_mode: "host"
     ports:
-      - 1830:1830/udp 
-    # command: "--log-level 10 -r rise -e masslab --publish udp_sjv --subscribe sjofartsverket"
-    command: "--log-level 10 --publish udp_sjv --subscribe sjofartsverket"
+      - 10110:10110/udp 
+    command: "--log-level 10 -r rise -e USER --subscribe sjofartsverket --publish sjv_nmea_udp --udp-port 10110"
     

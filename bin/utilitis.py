@@ -1,4 +1,5 @@
-from keelson.payloads.Target_pb2 import TargetDescription, Target
+from keelson.payloads.Target_pb2 import Target
+from keelson.payloads.Vessel_pb2 import VesselInformation
 import geopy.distance
 import keelson
 import zenoh
@@ -41,49 +42,49 @@ def set_navigation_status_enum(status):
 
 def set_target_type_enum(target_type):
     if target_type == 0:
-        return TargetDescription.TargetType.UNKNOWN
+        return VesselInformation.VesselType.UNKNOWN
     elif target_type == 20:
-        return TargetDescription.TargetType.WIG
+        return VesselInformation.VesselType.WIG
     elif target_type == 30:
-        return TargetDescription.TargetType.FISHING
+        return VesselInformation.VesselType.FISHING
     elif target_type == 31:
-        return TargetDescription.TargetType.TOWING
+        return VesselInformation.VesselType.TOWING
     elif target_type == 32:
-        return TargetDescription.TargetType.TOWING_LONG
+        return VesselInformation.VesselType.TOWING_LONG
     elif target_type == 33:
-        return TargetDescription.TargetType.DREDGING
+        return VesselInformation.VesselType.DREDGING
     elif target_type == 34:
-        return TargetDescription.TargetType.DIVING
+        return VesselInformation.VesselType.DIVING
     elif target_type == 35:
-        return TargetDescription.TargetType.MILITARY
+        return VesselInformation.VesselType.MILITARY
     elif target_type == 36:
-        return TargetDescription.TargetType.SAILING
+        return VesselInformation.VesselType.SAILING
     elif target_type == 37:
-        return TargetDescription.TargetType.PLEASURE
+        return VesselInformation.VesselType.PLEASURE
     elif target_type == 40:
-        return TargetDescription.TargetType.HSC
+        return VesselInformation.VesselType.HSC
     elif target_type == 50:
-        return TargetDescription.TargetType.PILOT
+        return VesselInformation.VesselType.PILOT
     elif target_type == 51:
-        return TargetDescription.TargetType.SAR
+        return VesselInformation.VesselType.SAR
     elif target_type == 52:
-        return TargetDescription.TargetType.TUG
+        return VesselInformation.VesselType.TUG
     elif target_type == 53:
-        return TargetDescription.TargetType.PORT
+        return VesselInformation.VesselType.PORT
     elif target_type == 54:
-        return TargetDescription.TargetType.ANTI_POLLUTION
+        return VesselInformation.VesselType.ANTI_POLLUTION
     elif target_type == 55:
-        return TargetDescription.TargetType.LAW_ENFORCEMENT
+        return VesselInformation.VesselType.LAW_ENFORCEMENT
     elif target_type == 58:
-        return TargetDescription.TargetType.MEDICAL
+        return VesselInformation.VesselType.MEDICAL
     elif target_type == 60:
-        return TargetDescription.TargetType.PASSENGER
+        return VesselInformation.VesselType.PASSENGER
     elif target_type == 70:
-        return TargetDescription.TargetType.CARGO
+        return VesselInformation.VesselType.CARGO
     elif target_type == 80:
-        return TargetDescription.TargetType.TANKER
+        return VesselInformation.VesselType.TANKER
     else:
-        return TargetDescription.TargetType.OTHER
+        return VesselInformation.VesselType.OTHER
 
 
 def position_to_common_center_point(latitude, longitude, heading, to_bow, to_stern, to_port, to_starboard):

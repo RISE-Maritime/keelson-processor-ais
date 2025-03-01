@@ -1,14 +1,6 @@
 # Keelson Processor AIS
 
-TODO: Processor tasks:
-
-- [ ] Parsing raw AIS messages from Sjöfartverker (DONE), Digitrafik (TODO) & Kystverket to Keelson protobuffer message format and publishing formatted data
-   - Only for area of intrest (needs dynamic update) 
-   - Output format Target 
-- AIS data validation 
-
-
-
+Keelson Processor AIS is a tool designed to process Automatic Identification System (AIS) data. It provides a flexible way to handle AIS messages from different providers, enabling users to publish and subscribe to various data streams. This README will guide you through the setup and usage of the Keelson Processor AIS, including quick start instructions, processing data, and setting up a development environment.
 
 ´´´´´´´´´
 
@@ -20,6 +12,10 @@ python3 bin/main.py --log-level 10 -r rise -e ted --publish udp_sjv --subscribe 
 python3 bin/main.py --log-level 20 -r rise -e erik --publish udp_sjv --subscribe sjofartsverket 
 
 python3 bin/main.py --log-level 10 -r rise -e ted --publish log --subscribe digitraffic 
+
+python3 bin/main.py --log-level 10 -r rise -e ted --publish sjv_nmea_udp --udp-port 10110 --subscribe sjofartsverket
+
+
 ```
 
 
