@@ -60,7 +60,7 @@ def terminal_inputs():
 
     parser.add_argument(
         "--publish",
-        choices=["log","sjv_nmea_udp", "target"],
+        choices=["log","sjv_nmea_ais_udp", "sjv_nmea_os_udp", "sjv_raw_udp", "target"],
         type=str,
         required=False,
         action="append",
@@ -73,6 +73,23 @@ def terminal_inputs():
         default=10110,
         help="UDP port to send NMEA data to",
     )
+    
+    parser.add_argument(
+        "--udp-host",
+        type=str,
+        required=False,
+        default="127.0.0.1",
+        help="UDP host to send NMEA data to",
+    )
+
+    parser.add_argument(
+        "--os_mmsi",
+        type=int,
+        required=False,
+        # default=230361000,
+        help="MMSI of the own ship",
+    )
+
 
     parser.add_argument(
         "-bn",

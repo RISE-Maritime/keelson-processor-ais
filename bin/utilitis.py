@@ -175,3 +175,67 @@ def position_within_boundary(latitude: float, longitude: float, args):
         return True
     else:
         return False
+
+
+def corrBering(bering):
+    """
+    Checking if bearing angle is insode 0 to 360
+
+    Parameters
+    ----------
+    bering (float) : bering angle
+    """
+
+    if bering >= 0 or bering < 360:
+        return bering
+    elif bering >= 360:
+        return bering - 360
+    elif bering < 0:
+        return bering + 360
+
+
+
+def getPredictorPositionsByTime(
+    predict_minutes, from_latitude, from_longitude, sog, cog, rot, heading, num_of_predictions=10
+):
+    """
+    Predictor positions and headings
+
+    Parameters
+    ----------
+    predict_minutes (float) : predicted time forward
+    num_of_predictions (int) : positions that will be returned
+    latitude (float) : own ship latitude given in degrees
+    longitude (float) :  own ship longitude given in degrees
+    sog (float) : own ship speed in knots
+    cog (float) : true north course over graound in (Degrees 0-360)
+    rot (float) : turning rate (Degrees per minute)
+    heading (float) : own ships heading
+    """
+
+    heading_predictions = []
+    pos_predictions = []
+
+    time_step = predict_minutes / num_of_predictions
+    pos_step = [from_latitude, from_longitude]
+
+    for pred_num in range(1, num_of_predictions + 1):
+        predict_minutes = time_step * pred_num
+
+        # Heading prediction
+        heading_change_prediction = heading + (rot * predict_minutes)
+        heading_change_prediction = corrBering(heading_change_prediction)
+        heading_predictions.append(heading_change_prediction)
+
+        # Position prediction
+        distance_traveled = sog * (time_step / 60)
+        cog_dir_prediction = cog + (rot * predict_minutes)
+        pos_prediction = list(
+            geopy.distance.distance(nautical=distance_traveled).destination(
+                (pos_step[0], pos_step[1]), bearing=cog_dir_prediction
+            )
+        )
+        pos_predictions.append([pos_prediction[1], pos_prediction[0]])
+        pos_step = [pos_prediction[0], pos_prediction[1]]
+
+    return pos_predictions, heading_predictions

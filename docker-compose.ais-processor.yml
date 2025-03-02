@@ -8,5 +8,5 @@ services:
     network_mode: "host"
     ports:
       - 10110:10110/udp 
-    command: "--log-level 10 -r rise -e USER --subscribe sjofartsverket --publish sjv_nmea_udp --udp-port 10110"
+    command: "--log-level 10 -r rise -e erik --subscribe sjofartsverket --publish sjv_nmea_udp --udp-port 10110"
     

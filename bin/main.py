@@ -15,36 +15,46 @@ import pyais
 import time
 from utilitis import set_navigation_status_enum, set_target_type_enum, position_to_common_center_point, filterAIS, rot_fix, publish_message, position_within_boundary
 import socket
+import pynmea2
+import threading
+import math
+from utilitis import corrBering
+import geopy.distance
 
 # Global variables
 session = None
 args = None
 sock = None
+latest_os_message = None
+last_received_time = None
+udp_server_address = None
 
 # Storing AIS dimensions for each MMSI for position correction
 AIS_DB = {
 }
 
 
-
 def main():
-    global session, args, sock
-
+    global session, args, sock, udp_server_address
     # Input arguments and configurations
     args = terminal_inputs()
     # Setup logger
     logging.basicConfig(
         format="%(asctime)s %(levelname)s [%(lineno)d]: %(message)s", level=args.log_level
     )
-    # logging.basicConfig(
-    #     format="%(asctime)s %(levelname)s %(name)s %(message)s  [%(lineno)d]", level=args.log_level
-    # )
-
     
     logging.captureWarnings(True)
     warnings.filterwarnings("once")
     # initiate logging
     zenoh.init_log_from_env_or("error")
+
+        # Define the UDP server address and port
+    udp_port = args.udp_port
+    udp_host = args.udp_host
+    udp_server_address = (udp_host, udp_port)
+
+    if "sjv_nmea_os_udp" in args.publish:
+        threading.Thread(target=send_os_nmea, daemon=True).start()
 
     # Construct session
     logging.info("Opening Zenoh session...")
@@ -67,7 +77,6 @@ def main():
 
         atexit.register(_on_exit)
 
-
         # UDP socket
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
@@ -79,7 +88,7 @@ def main():
             key_exp_pub_sjv = keelson.construct_pubsub_key(
                 realm=args.realm,
                 entity_id="sjofartsverket",
-                subject="raw/ais/nmea0183",  # Needs to be a supported subject
+                subject="raw/ais/nmea0183", 
                 source_id="**",
             )
             sub_sjv = session.declare_subscriber(
@@ -96,13 +105,13 @@ def main():
                 subject="raw/ais/json/vessels-v2",  # Needs to be a supported subject
                 source_id="**",
             )
-
             sub_digitraffic = session.declare_subscriber(
                 key_exp_pub_digitraffic,
                 sub_digitraffic_data,
             )
-            
             logging.debug(f"Subscribing to: {key_exp_pub_digitraffic}")
+
+        # TODO: Kystverket subscriber
         
 
         print("Press CTRL-C to quit...")
@@ -113,33 +122,178 @@ def main():
 
 
 
+
+def send_os_nmea():
+    global latest_os_message, last_received_time, sock, udp_server_address
+    
+    logging.debug(f"Own Ship NMEA UDP thread started!")
+
+    while True:
+        if latest_os_message:
+           
+            current_time = time.time()
+           
+            if current_time - last_received_time > 1:
+                # Perform dead reckoning
+                decoded_ais = latest_os_message
+                
+                time_diff = current_time - last_received_time
+                
+                predict_minutes = time_diff / 60
+
+                rot = pyais.messages.from_turn(decoded_ais.turn)
+           
+                # Heading prediction
+                heading_change_prediction = decoded_ais.heading + (rot * predict_minutes)
+                heading = corrBering(heading_change_prediction)
+                logging.debug(f"Heading prediction: {decoded_ais.heading}")
+
+                # Course prediction
+                course_change_prediction = decoded_ais.course + (rot * predict_minutes)
+                course = corrBering(course_change_prediction)
+                logging.debug(f"Course prediction: {decoded_ais.course}")
+
+
+                # Position prediction
+                speed = decoded_ais.speed
+                logging.debug(f"Speed: {speed}")
+               
+                distance_traveled = decoded_ais.speed * (predict_minutes / 60)
+                logging.debug(f"predict_minutes: {predict_minutes}")
+                logging.debug(f"Distance traveled: {distance_traveled}")
+                cog_dir_prediction = decoded_ais.course + (rot * predict_minutes)
+                
+                pred_positon = list(geopy.distance.distance(nautical=distance_traveled).destination((decoded_ais.lat, decoded_ais.lon), bearing=cog_dir_prediction))
+                latitude = pred_positon[0]
+                longitude = pred_positon[1]
+                logging.debug(f"Position prediction: {longitude}, {longitude}")
+            
+ 
+            else:
+                decoded_ais = latest_os_message
+
+                # Convert to Own Ship NMEA sentence
+                rot = pyais.messages.from_turn(decoded_ais.turn)
+                speed = decoded_ais.speed
+                course = decoded_ais.course
+                heading = decoded_ais.heading
+                latitude = decoded_ais.lat
+                longitude = decoded_ais.lon
+
+            # Get the current time in UTC
+            current_time_str = time.strftime("%H%M%S", time.gmtime())
+            current_time_str += ".00"
+
+            # Convert latitude to Degrees Minutes format
+            lat_deg = int(latitude)
+            lat_min = abs(latitude - lat_deg) * 60
+            lat_deg_min = f"{abs(lat_deg):02d}{lat_min:07.4f}"
+            # Determine the hemisphere for latitude
+            lat_hemisphere = 'N' if latitude >= 0 else 'S'
+            # Convert longitude to Degrees Minutes format
+            lon_deg = int(longitude)
+            lon_min = abs(longitude - lon_deg) * 60
+            lon_deg_min = f"{abs(lon_deg):03d}{lon_min:07.4f}"
+            # Determine the hemisphere for longitude
+            lon_hemisphere = 'E' if longitude >= 0 else 'W'
+
+            # Create the GGA message with the converted latitude and longitude
+            msg_position = pynmea2.GGA('GP', 'GGA', (current_time_str, lat_deg_min, lat_hemisphere, lon_deg_min, lon_hemisphere, '1', '09', '0.9', '0.00', 'M', '-32.0', 'M', '', '0000'))
+            os_nmea_bytes_pos = msg_position.render().encode('utf-8')
+            
+            # Create the HDT message with the heading
+            msg_heading = pynmea2.HDT('GP', 'HDT', (f"{heading:.1f}", 'T'))
+            os_nmea_bytes_hdt = msg_heading.render().encode('utf-8')
+            
+            # Create the ROT message with the rate of turn
+            msg_rot = pynmea2.ROT('GP', 'ROT', (f"{rot:.1f}", 'A'))
+            os_nmea_bytes_rot = msg_rot.render().encode('utf-8')
+
+            # Create the VTG message with the course and speed
+            msg_vtg = pynmea2.VTG('GP', 'VTG', (f"{course:.1f}", 'T', '', 'M', f"{speed:.1f}", 'N', '', 'K'))
+            os_nmea_bytes_vtg = msg_vtg.render().encode('utf-8')
+
+            # Send messages to the UDP server
+            sock.sendto(os_nmea_bytes_hdt, udp_server_address)
+            sock.sendto(os_nmea_bytes_pos, udp_server_address)
+            sock.sendto(os_nmea_bytes_vtg, udp_server_address)
+            sock.sendto(os_nmea_bytes_rot, udp_server_address)
+            
+            logging.debug(f"SJV OS NMEA UDP SENT!")
+            time.sleep(1)
+
+
 def sub_sjv_data(data: zenoh.Sample):
-    global args, session, sock
+    """
+    Processes incoming AIS data, decodes it, and publishes it to specified targets.
+    Args:
+        data (zenoh.Sample): The incoming data sample containing AIS information.
+    Raises:
+        Exception: If there is an error sending UDP data or parsing AIS data.
+    The function performs the following steps:
+    1. Uncovers the payload from the incoming data sample.
+    2. Parses the NMEA0183 AIS data from the payload.
+    3. Depending on the configuration in `args.publish`, it either:
+        a. Sends the NMEA sentence to a UDP server.
+        b. Decodes the AIS message and processes it based on its type.
+    4. For specific AIS message types, it updates the target information and publishes it if the position is within the area of interest.
+    5. Manages AIS data within a boundary and updates the AIS database accordingly.
+    """
+    
+    global args, session, sock, udp_server_address, latest_os_message, last_received_time
     received_at, enclosed_at, content = keelson.uncover(data.payload.to_bytes())
     
     # logging.debug(f"Received at: {received_at} | Enclosed at: {enclosed_at} type {type(enclosed_at)}" )
     # logging.debug(f"Received on: {data.key_expr}")
 
+
+
     # Parse the NMEA0183 AIS data
     time_value = TimestampedBytes.FromString(content)
     nmea_sentence = time_value.value.decode("utf-8")
-    logging.debug(f"Received NMEA sentence: {nmea_sentence}")
+    # logging.debug(f"Received NMEA sentence: {nmea_sentence}")
 
-    if "sjv_nmea_udp" in args.publish:
+    if "sjv_raw_udp" in args.publish:
         try:
-            # Define the UDP server address and port
-            port = args.udp_port
-            logging.debug(f"UDP port: {port}")
-            server_address = ('127.0.0.1', port)
             # Convert the nmea_sentence to bytes
             nmea_sentence_bytes = nmea_sentence.encode('utf-8')
             # Send the nmea_sentence to the UDP server
-            sock.sendto(nmea_sentence_bytes, server_address)
+            sock.sendto(nmea_sentence_bytes, udp_server_address)
             logging.debug(f"SJV NMEA UDP SENT!")
         except Exception as e:
             logging.ERROR(f"Error sending UDP data: {e}")
-     
+
+
+    if "sjv_nmea_ais_udp" in args.publish:
+        try:
+            if nmea_sentence.split(",")[0] not in ["!AIVDM", "$ABVSI"]:
+                decoded_ais = pyais.decode(nmea_sentence)
+                if decoded_ais.mmsi == args.os_mmsi:
+                    logging.debug(f"DO NOT SENDING OS AIS message: {decoded_ais}")
+                else:
+                    # Convert the nmea_sentence to bytes
+                    nmea_sentence_bytes = nmea_sentence.encode('utf-8')
+                    # Send the nmea_sentence to the UDP server
+                    sock.sendto(nmea_sentence_bytes, udp_server_address)
+                    logging.debug(f"SJV NMEA UDP SENT!")
+        except Exception as e:
+            logging.WARNING(f"Error sending UDP data: {e}")
+
+
+    if ("sjv_nmea_os_udp" in args.publish) and (args.os_mmsi):
+        try:
+            if nmea_sentence.split(",")[0] not in ["!AIVDM", "$ABVSI"]:
+                decoded_ais = pyais.decode(nmea_sentence)
+                
+                if decoded_ais.mmsi == args.os_mmsi:
+                    latest_os_message = decoded_ais
+                    last_received_time = time.time()
+                    logging.debug(f"Decoded OS AIS message: {decoded_ais}")
+            
+        except Exception as e:  
+            logging.warning(f"Error parsing own ship AIS: {e}")
        
+
 
     if "target" in args.publish:
         if nmea_sentence.split(",")[0] not in ["!AIVDM", "$ABVSI"]:
