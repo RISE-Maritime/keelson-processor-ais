@@ -15,6 +15,44 @@ python3 bin/main.py --log-level 10 -r rise -e ted --publish log --subscribe digi
 
 python3 bin/main.py --log-level 10 -r rise -e ted --publish sjv_nmea_udp --udp-port 10110 --subscribe sjofartsverket
 
+python3 bin/main.py --log-level 30 -r rise -e ted --publish sjv_nmea_os_udp --os_mmsi 230361000 --udp-port 10110 --subscribe sjofartsverket --publish sjv_nmea_ais_udp
+
+
+
+
+vscode ➜ /workspaces/keelson-processor-ais (master) $ python3 bin/main.py -h
+
+usage: keelson_processor_ais [-h] [-l LOG_LEVEL] [--mode {peer,client}] [--connect CONNECT] [-r REALM] [-e ENTITY_ID] --subscribe {sjofartsverket,digitraffic}
+                             [--publish {log,sjv_nmea_ais_udp,sjv_nmea_os_udp,sjv_raw_udp,target}] [--udp-port UDP_PORT] [--udp-host UDP_HOST] [--os_mmsi OS_MMSI] [-bn BOUNDARY_NORTH] [-bs BOUNDARY_SOUTH]
+                             [-be BOUNDARY_EAST] [-bw BOUNDARY_WEST]
+
+options:
+  -h, --help            show this help message and exit
+  -l LOG_LEVEL, --log-level LOG_LEVEL
+                        Log level 10=DEBUG, 20=INFO, 30=WARN, 40=ERROR, 50=CRITICAL 0=NOTSET (default: 30)
+  --mode {peer,client}, -m {peer,client}
+                        The zenoh session mode. (default: None)
+  --connect CONNECT     Endpoints to connect to, in case multicast is not working. ex. tcp/localhost:7447 (default: None)
+  -r REALM, --realm REALM
+                        Unique id for a domain/realm to connect ex. rise (default: rise)
+  -e ENTITY_ID, --entity-id ENTITY_ID
+                        Entity being a unique id representing an entity within the realm ex, landkrabba (default: masslab)
+  --subscribe {sjofartsverket,digitraffic}
+                        The keelson AIS data source to subscribe to, allowing multiple sources by specifying multiple subscribers. (default: None)
+  --publish {log,sjv_nmea_ais_udp,sjv_nmea_os_udp,sjv_raw_udp,target}
+  --udp-port UDP_PORT   UDP port to send NMEA data to (default: 10110)
+  --udp-host UDP_HOST   UDP host to send NMEA data to (default: 127.0.0.1)
+  --os_mmsi OS_MMSI     MMSI of the own ship (default: None)
+  -bn BOUNDARY_NORTH, --boundary_north BOUNDARY_NORTH
+                        Northern boundary of the area of interest (default: 63.9)
+  -bs BOUNDARY_SOUTH, --boundary_south BOUNDARY_SOUTH
+                        Southern boundary of the area of interest (default: 62.8)
+  -be BOUNDARY_EAST, --boundary_east BOUNDARY_EAST
+                        Eastern boundary of the area of interest (default: 21.7)
+  -bw BOUNDARY_WEST, --boundary_west BOUNDARY_WEST
+                        Western boundary of the area of interest (default: 20.293)
+
+
 
 ```
 
