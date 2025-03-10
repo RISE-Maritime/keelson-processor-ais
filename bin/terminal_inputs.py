@@ -60,7 +60,7 @@ def terminal_inputs():
 
     parser.add_argument(
         "--publish",
-        choices=["log","sjv_nmea_ais_udp", "sjv_nmea_os_udp", "sjv_raw_udp", "target"],
+        choices=["log","sjv_nmea_ais_udp", "sjv_nmea_os_udp", "sjv_raw_udp", "sjv_targets"],
         type=str,
         required=False,
         action="append",

@@ -1,43 +1,45 @@
 from keelson.payloads.Target_pb2 import Target
 from keelson.payloads.Vessel_pb2 import VesselInformation
+from keelson.payloads.Navigation_pb2 import NavigationStatus
 import geopy.distance
 import keelson
 import zenoh
+import logging
 
 
 def set_navigation_status_enum(status):
     if status == 0:
-        return Target.NavigationStatus.UNDER_WAY
+        return NavigationStatus.NavigationStatus.UNDER_WAY
     elif status == 1:
-        return Target.NavigationStatus.AT_ANCHOR
+        return NavigationStatus.NavigationStatus.AT_ANCHOR
     elif status == 2:
-        return Target.NavigationStatus.NOT_UNDER_COMMAND
+        return NavigationStatus.NavigationStatus.NOT_UNDER_COMMAND
     elif status == 3:
-        return Target.NavigationStatus.RESTRICTED_MANEUVERABILITY
+        return NavigationStatus.NavigationStatus.RESTRICTED_MANEUVERABILITY
     elif status == 4:
-        return Target.NavigationStatus.CONSTRAINED_BY_DRAUGHT
+        return NavigationStatus.NavigationStatus.CONSTRAINED_BY_DRAUGHT
     elif status == 5:
-        return Target.NavigationStatus.MOORED
+        return NavigationStatus.NavigationStatus.MOORED
     elif status == 6:
-        return Target.NavigationStatus.AGROUND
+        return NavigationStatus.NavigationStatus.AGROUND
     elif status == 7:
-        return Target.NavigationStatus.ENGAGED_IN_FISHING
+        return NavigationStatus.NavigationStatus.ENGAGED_IN_FISHING
     elif status == 8:
-        return Target.NavigationStatus.UNDER_WAY_SAILING
+        return NavigationStatus.NavigationStatus.UNDER_WAY_SAILING
     elif status == 9:
-        return Target.NavigationStatus.FUTURE_HSC
+        return NavigationStatus.NavigationStatus.FUTURE_HSC
     elif status == 10:
-        return Target.NavigationStatus.FUTURE_WIG
+        return NavigationStatus.NavigationStatus.FUTURE_WIG
     elif status == 11:
-        return Target.NavigationStatus.TOWING_ASTERN
+        return NavigationStatus.NavigationStatus.TOWING_ASTERN
     elif status == 12:
-        return Target.NavigationStatus.PUSHING_AHEAD
+        return NavigationStatus.NavigationStatus.PUSHING_AHEAD
     elif status == 13:
-        return Target.NavigationStatus.RESERVED_FUTURE_USE
+        return NavigationStatus.NavigationStatus.RESERVED_FUTURE_USE
     elif status == 14:
-        return Target.NavigationStatus.AIS_SART
-    elif status == 15:
-        return Target.NavigationStatus.UNDEFINED
+        return NavigationStatus.NavigationStatus.AIS_SART
+    else:
+        return NavigationStatus.NavigationStatus.UNDEFINED
 
 
 def set_target_type_enum(target_type):
@@ -118,6 +120,7 @@ def filterAIS(msg):
     # Filter out AIS messages
 
     # TYPE 0: Unknown
+    # TYPE 1: Position Report Class A
     # TYPE 4: Base Station Report
     # TYPE 8: Binary Broadcast Message
     # TYPE 9: Standard SAR Aircraft Position Report

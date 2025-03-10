@@ -11,13 +11,13 @@ from keelson.payloads.Primitives_pb2 import TimestampedBytes
 from keelson.payloads.Target_pb2 import Target, TargetDataSource, TargetDescription
 from keelson.payloads.Vessel_pb2 import Vessel, VesselInformation
 from keelson.payloads.LocationFix_pb2 import LocationFix
+from keelson.payloads.Navigation_pb2 import NavigationStatus
 import pyais
 import time
 from utilitis import set_navigation_status_enum, set_target_type_enum, position_to_common_center_point, filterAIS, rot_fix, publish_message, position_within_boundary
 import socket
 import pynmea2
 import threading
-import math
 from utilitis import corrBering
 import geopy.distance
 
@@ -117,8 +117,6 @@ def main():
         print("Press CTRL-C to quit...")
         while True:
             time.sleep(1)
-
-
 
 
 
@@ -253,6 +251,7 @@ def sub_sjv_data(data: zenoh.Sample):
     nmea_sentence = time_value.value.decode("utf-8")
     # logging.debug(f"Received NMEA sentence: {nmea_sentence}")
 
+    # Forwarding RAW NMEA from SJV to UDP server
     if "sjv_raw_udp" in args.publish:
         try:
             # Convert the nmea_sentence to bytes
@@ -263,7 +262,7 @@ def sub_sjv_data(data: zenoh.Sample):
         except Exception as e:
             logging.ERROR(f"Error sending UDP data: {e}")
 
-
+    # Forwarding AIS NMEA from SJV to UDP server and filtering out own ship AIS
     if "sjv_nmea_ais_udp" in args.publish:
         try:
             if nmea_sentence.split(",")[0] not in ["!AIVDM", "$ABVSI"]:
@@ -279,7 +278,7 @@ def sub_sjv_data(data: zenoh.Sample):
         except Exception as e:
             logging.WARNING(f"Error sending UDP data: {e}")
 
-
+    # Forwarding OWN SHIP based on SJV AIS NMEA from UDP server
     if ("sjv_nmea_os_udp" in args.publish) and (args.os_mmsi):
         try:
             if nmea_sentence.split(",")[0] not in ["!AIVDM", "$ABVSI"]:
@@ -293,187 +292,189 @@ def sub_sjv_data(data: zenoh.Sample):
         except Exception as e:  
             logging.warning(f"Error parsing own ship AIS: {e}")
        
-
-
-    if "target" in args.publish:
+    # Forwarding Keelson Target from SJV to UDP server
+    if "sjv_targets" in args.publish:
         if nmea_sentence.split(",")[0] not in ["!AIVDM", "$ABVSI"]:
             # logging.debug(f"Received NMEA sentence: {nmea_sentence}")
 
-            try:
-                decoded = pyais.decode(nmea_sentence)
+            # try:
+            decoded = pyais.decode(nmea_sentence)
+            logging.debug(f"Decoded AIS message: {decoded}")
 
-                if filterAIS(decoded):
-                    payload_target = Target()
-                    payload_target.data_source.source.append( TargetDataSource.Source.AIS_PROVIDER)
-                    payload_target.timestamp.FromNanoseconds(enclosed_at)
-                    payload_target.description.target_type(TargetDescription.TargetType.VESSEL)
-                    payload_target.description.vessel.information.mmsi = decoded.mmsi
+            if filterAIS(decoded):
+                
+                payload_target = Target()
+                payload_target.data_source.sources_type.append( TargetDataSource.Source.AIS_PROVIDER)
+                payload_target.timestamp.FromNanoseconds(enclosed_at)
+                payload_target.description.target_type = TargetDescription.TargetType.VESSEL
+                payload_target.description.vessel.information.mmsi = decoded.mmsi
+                                
 
-                    logging.debug(f"payload_target {payload_target}")
+                # TYPE 1,2 & 3: Position Report Class A
+                # TYPE 27: Long Range AIS Broadcast message
+                if decoded.msg_type in [1, 2, 3, 27]:
 
-                    # payload_target.mmsi = decoded.mmsi
+                    # NAVIGATIONN STATUS
+                    status = decoded.status.value
+                    logging.debug(f"Navigation status: {status}")
+                    payload_target.navigation_status.status = set_navigation_status_enum(status)
+                    
+                    # set_navigation_status_enum(status)
+                    
+                    logging.debug(f"payload_target: {payload_target}")
 
+                    # logging.debug(f"Payload_target_description: {TargetDescription.NavigationStatus.Name(payload_target_description.navigation_status)}")
 
-                    # TYPE 1,2 & 3: Position Report Class A
-                    # TYPE 27: Long Range AIS Broadcast message
-                    if decoded.msg_type in [1, 2, 3, 27]:
+                    # ROT
+                    rot = pyais.messages.from_turn(decoded.turn)
+                    rot = rot_fix(rot)
+                    payload_target.rate_of_turn_degrees_per_minute = rot
 
-                        # NAVIGATIONN STATUS
-                        status = decoded.status.value
-                        payload_target.navigation_status = set_navigation_status_enum(
-                            status)
-                        # logging.debug(f"Payload_target_description: {TargetDescription.NavigationStatus.Name(payload_target_description.navigation_status)}")
+                    # SOG, COG, HDG
+                    payload_target.speed_over_ground_knots = decoded.speed
+                    payload_target.course_over_ground_knots = decoded.course
+                    payload_target.heading_degrees = decoded.heading
+                    payload_target.latitude_degrees = decoded.lat
+                    payload_target.longitude_degrees = decoded.lon
 
-                        # ROT
-                        rot = pyais.messages.from_turn(decoded.turn)
-                        rot = rot_fix(rot)
-                        payload_target.rate_of_turn_degrees_per_minute = rot
+                    # Correcting AIS position if vessel outline is available
+                    if str(decoded.mmsi) in AIS_DB.keys():
+                        if "to_stern" in AIS_DB[str(decoded.mmsi)].keys():
+                            latitude_adj, longitude_adj = position_to_common_center_point(decoded.lat, decoded.lon, decoded.heading, AIS_DB[str(
+                                decoded.mmsi)]["to_bow"], AIS_DB[str(decoded.mmsi)]["to_stern"], AIS_DB[str(decoded.mmsi)]["to_port"], AIS_DB[str(decoded.mmsi)]["to_starboard"])
+                            payload_target.latitude_degrees = latitude_adj
+                            payload_target.longitude_degrees = longitude_adj
+                                    
 
-                        # SOG, COG, HDG
-                        payload_target.speed_over_ground_knots = decoded.speed
-                        payload_target.course_over_ground_knots = decoded.course
-                        payload_target.heading_degrees = decoded.heading
-                        payload_target.latitude_degrees = decoded.lat
-                        payload_target.longitude_degrees = decoded.lon
-
-                        # Correcting AIS position if vessel outline is available
-                        if str(decoded.mmsi) in AIS_DB.keys():
-                            if "to_stern" in AIS_DB[str(decoded.mmsi)].keys():
-                                latitude_adj, longitude_adj = position_to_common_center_point(decoded.lat, decoded.lon, decoded.heading, AIS_DB[str(
-                                    decoded.mmsi)]["to_bow"], AIS_DB[str(decoded.mmsi)]["to_stern"], AIS_DB[str(decoded.mmsi)]["to_port"], AIS_DB[str(decoded.mmsi)]["to_starboard"])
-                                payload_target.latitude_degrees = latitude_adj
-                                payload_target.longitude_degrees = longitude_adj
-                                        
-
-                        # Managing AIS within area of interest
-                        if position_within_boundary(payload_target.latitude_degrees, payload_target.longitude_degrees, args):
-                            # for AIS position correction
-                            if str(decoded.mmsi) in AIS_DB:
-                                AIS_DB[str(decoded.mmsi)] = {
-                                    **AIS_DB[str(decoded.mmsi)],
-                                    "position_within_boundary": True
-                                }
-                            else:
-                                AIS_DB[str(decoded.mmsi)] = {
-                                    "position_within_boundary": True
-                                }
-                            publish_message(payload_target, "target",
-                                            decoded.mmsi, session, args, logging)
+                    # Managing AIS within area of interest
+                    if position_within_boundary(payload_target.latitude_degrees, payload_target.longitude_degrees, args):
+                        # for AIS position correction
+                        if str(decoded.mmsi) in AIS_DB:
+                            AIS_DB[str(decoded.mmsi)] = {
+                                **AIS_DB[str(decoded.mmsi)],
+                                "position_within_boundary": True
+                            }
                         else:
-                            if str(decoded.mmsi) in AIS_DB:
-                                AIS_DB[str(decoded.mmsi)] = {
-                                    **AIS_DB[str(decoded.mmsi)],
-                                    "position_within_boundary": False
-                                }
-                            else:
-                                AIS_DB[str(decoded.mmsi)] = {
-                                    "position_within_boundary": False
-                                }
-
-                    # TYPE 18: Standard Class B CS Position Report
-                    elif decoded.msg_type in [18]:
-
-                        payload_target.speed_over_ground_knots = decoded.speed
-                        payload_target.lpdecoded.lon
-                        payload_target.latitude_degrees = decoded.lat
-                        payload_target.course_over_ground_knots = decoded.course
-                        payload_target.heading_degrees = decoded.heading
-
-                        # Managing AIS within area of interest
-                        if position_within_boundary(payload_target.latitude_degrees, payload_target.longitude_degrees, args):
-                            # for AIS position correction
-                            if str(decoded.mmsi) in AIS_DB:
-                                AIS_DB[str(decoded.mmsi)] = {
-                                    **AIS_DB[str(decoded.mmsi)],
-                                    "position_within_boundary": True
-                                }
-                            else:
-                                AIS_DB[str(decoded.mmsi)] = {
-                                    "position_within_boundary": True
-                                }
-                            publish_message(
-                                payload_target, "target", decoded.mmsi, session, args, logging)
+                            AIS_DB[str(decoded.mmsi)] = {
+                                "position_within_boundary": True
+                            }
+                        publish_message(payload_target, "target",
+                                        decoded.mmsi, session, args, logging)
+                    else:
+                        if str(decoded.mmsi) in AIS_DB:
+                            AIS_DB[str(decoded.mmsi)] = {
+                                **AIS_DB[str(decoded.mmsi)],
+                                "position_within_boundary": False
+                            }
                         else:
-                            if str(decoded.mmsi) in AIS_DB:
-                                AIS_DB[str(decoded.mmsi)] = {
-                                    **AIS_DB[str(decoded.mmsi)],
-                                    "position_within_boundary": False
-                                }
-                            else:
-                                AIS_DB[str(decoded.mmsi)] = {
-                                    "position_within_boundary": False
-                                }
+                            AIS_DB[str(decoded.mmsi)] = {
+                                "position_within_boundary": False
+                            }
 
-                    elif decoded.msg_type in [24]:  # TYPE 24: Static Data Report
-                        json_decoded = decoded.to_json()
-                        # logging.debug(f"Decoded AIS message: {decoded}")
+                # TYPE 18: Standard Class B CS Position Report
+                elif decoded.msg_type in [18]:
 
-                        if "shipname" in json_decoded:  # Part A
-                            payload_target_description.name = decoded.shipname
-                            
-                            if str(decoded.mmsi) in AIS_DB:
-                                AIS_DB[str(decoded.mmsi)] = {
-                                    **AIS_DB[str(decoded.mmsi)],
-                                    "shipname": decoded.shipname
-                                }
-                            else:
-                                AIS_DB[str(decoded.mmsi)] = {
-                                    "shipname": decoded.shipname
-                                }
+                    payload_target.speed_over_ground_knots = decoded.speed
+                    payload_target.lpdecoded.lon
+                    payload_target.latitude_degrees = decoded.lat
+                    payload_target.course_over_ground_knots = decoded.course
+                    payload_target.heading_degrees = decoded.heading
 
-                        else:  # Part B
-                            payload_target_description.callsign = decoded.callsign
-                            payload_target_description.vessel_type = set_target_type_enum(
-                                decoded.ship_type)
+                    # Managing AIS within area of interest
+                    if position_within_boundary(payload_target.latitude_degrees, payload_target.longitude_degrees, args):
+                        # for AIS position correction
+                        if str(decoded.mmsi) in AIS_DB:
+                            AIS_DB[str(decoded.mmsi)] = {
+                                **AIS_DB[str(decoded.mmsi)],
+                                "position_within_boundary": True
+                            }
+                        else:
+                            AIS_DB[str(decoded.mmsi)] = {
+                                "position_within_boundary": True
+                            }
+                        publish_message(
+                            payload_target, "target", decoded.mmsi, session, args, logging)
+                    else:
+                        if str(decoded.mmsi) in AIS_DB:
+                            AIS_DB[str(decoded.mmsi)] = {
+                                **AIS_DB[str(decoded.mmsi)],
+                                "position_within_boundary": False
+                            }
+                        else:
+                            AIS_DB[str(decoded.mmsi)] = {
+                                "position_within_boundary": False
+                            }
 
-                            width = decoded.to_port + decoded.to_starboard
-                            length = decoded.to_bow + decoded.to_stern
+                elif decoded.msg_type in [24]:  # TYPE 24: Static Data Report
+                    json_decoded = decoded.to_json()
+                    # logging.debug(f"Decoded AIS message: {decoded}")
 
-                            new_to_bow = length / 2
-                            new_to_stern = -length / 2
-                            new_to_starboard = width / 2
-                            new_to_port = -width / 2
+                    if "shipname" in json_decoded:  # Part A
+                        payload_target_description.name = decoded.shipname
+                        
+                        if str(decoded.mmsi) in AIS_DB:
+                            AIS_DB[str(decoded.mmsi)] = {
+                                **AIS_DB[str(decoded.mmsi)],
+                                "shipname": decoded.shipname
+                            }
+                        else:
+                            AIS_DB[str(decoded.mmsi)] = {
+                                "shipname": decoded.shipname
+                            }
 
-                            payload_target_description.to_bow_meters = new_to_bow
-                            payload_target_description.to_stern_meters = new_to_stern
-                            payload_target_description.to_starboard_meters = new_to_starboard
-                            payload_target_description.to_port_meters = new_to_port
+                    else:  # Part B
+                        payload_target_description.callsign = decoded.callsign
+                        payload_target_description.vessel_type = set_target_type_enum(
+                            decoded.ship_type)
 
-                            # for AIS position correction
-                            if str(decoded.mmsi) in AIS_DB:
-                                AIS_DB[str(decoded.mmsi)] = {
-                                    **AIS_DB[str(decoded.mmsi)],
-                                    "to_bow": decoded.to_bow,
-                                    "to_stern": decoded.to_stern,
-                                    "to_starboard": decoded.to_starboard,
-                                    "to_port": decoded.to_port,
-                                }
-                            else:
-                                AIS_DB[str(decoded.mmsi)] = {
-                                    "to_bow": decoded.to_bow,
-                                    "to_stern": decoded.to_stern,
-                                    "to_starboard": decoded.to_starboard,
-                                    "to_port": decoded.to_port,
-                                    "position_within_boundary": False
-                                }
+                        width = decoded.to_port + decoded.to_starboard
+                        length = decoded.to_bow + decoded.to_stern
+
+                        new_to_bow = length / 2
+                        new_to_stern = -length / 2
+                        new_to_starboard = width / 2
+                        new_to_port = -width / 2
+
+                        payload_target_description.to_bow_meters = new_to_bow
+                        payload_target_description.to_stern_meters = new_to_stern
+                        payload_target_description.to_starboard_meters = new_to_starboard
+                        payload_target_description.to_port_meters = new_to_port
+
+                        # for AIS position correction
+                        if str(decoded.mmsi) in AIS_DB:
+                            AIS_DB[str(decoded.mmsi)] = {
+                                **AIS_DB[str(decoded.mmsi)],
+                                "to_bow": decoded.to_bow,
+                                "to_stern": decoded.to_stern,
+                                "to_starboard": decoded.to_starboard,
+                                "to_port": decoded.to_port,
+                            }
+                        else:
+                            AIS_DB[str(decoded.mmsi)] = {
+                                "to_bow": decoded.to_bow,
+                                "to_stern": decoded.to_stern,
+                                "to_starboard": decoded.to_starboard,
+                                "to_port": decoded.to_port,
+                                "position_within_boundary": False
+                            }
 
 
-                        # Managing AIS within area of interest
-                        if str(decoded.mmsi) in  AIS_DB.keys():
-                            if "shipname" in AIS_DB[str(decoded.mmsi)].keys():
-                                payload_target_description.name = AIS_DB[str(decoded.mmsi)]["shipname"]
+                    # Managing AIS within area of interest
+                    if str(decoded.mmsi) in  AIS_DB.keys():
+                        if "shipname" in AIS_DB[str(decoded.mmsi)].keys():
+                            payload_target_description.name = AIS_DB[str(decoded.mmsi)]["shipname"]
 
-                            if "position_within_boundary" in AIS_DB[str(decoded.mmsi)].keys():
-                                if AIS_DB[str(decoded.mmsi)]["position_within_boundary"]:
-                                    publish_message(payload_target_description, "target_description",
-                                                    decoded.mmsi, session, args, logging)
-                                        
+                        if "position_within_boundary" in AIS_DB[str(decoded.mmsi)].keys():
+                            if AIS_DB[str(decoded.mmsi)]["position_within_boundary"]:
+                                publish_message(payload_target_description, "target_description",
+                                                decoded.mmsi, session, args, logging)
+                                    
 
-                    # else:
-                    #     logging.debug(f"Decoded AIS message: {decoded}")
+                # else:
+                #     logging.debug(f"Decoded AIS message: {decoded}")
 
-            except Exception as e:
-                logging.warning(f"Error parsing AIS: {e}")
+            # except Exception as e:
+            #     logging.warning(f"Error parsing AIS: {e}")
 
 
 def sub_digitraffic_data(data):

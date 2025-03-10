@@ -1,6 +1,6 @@
 environs==14.1.0
 protobuf==5.29.3
-keelson==0.3.9rc3
+keelson==0.3.9rc4
 pynmea2
 pyais==2.9.0
 geopy==2.4.1
