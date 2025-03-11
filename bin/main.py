@@ -9,9 +9,7 @@ import keelson
 from terminal_inputs import terminal_inputs
 from keelson.payloads.Primitives_pb2 import TimestampedBytes
 from keelson.payloads.Target_pb2 import Target, TargetDataSource, TargetDescription
-from keelson.payloads.Vessel_pb2 import Vessel, VesselInformation
-from keelson.payloads.LocationFix_pb2 import LocationFix
-from keelson.payloads.Navigation_pb2 import NavigationStatus
+from keelson.payloads.GeoJSON_pb2 import GeoJSON
 import pyais
 import time
 from utilitis import set_navigation_status_enum, set_target_type_enum, position_to_common_center_point, filterAIS, rot_fix, publish_message, position_within_boundary
@@ -83,7 +81,7 @@ def main():
         #################################################
         # Setting up SUBSCRIBERs
 
-        # Sjöfartsverket AIS subscriber
+        # Sjöfartsverket AIS 
         if "sjofartsverket" in args.subscribe:
             key_exp_pub_sjv = keelson.construct_pubsub_key(
                 realm=args.realm,
@@ -97,7 +95,8 @@ def main():
             )
             logging.debug(f"Subscribing to: {key_exp_pub_sjv}")
 
-        # Digitraffic subscriber
+
+        # TODO: UPGRADE - Digitraffic subscriber 
         if "digitraffic" in args.subscribe:
             key_exp_pub_digitraffic = keelson.construct_pubsub_key(
                 realm=args.realm,
@@ -111,7 +110,7 @@ def main():
             )
             logging.debug(f"Subscribing to: {key_exp_pub_digitraffic}")
 
-        # TODO: Kystverket subscriber
+        # TODO: CREATE - Kystverket subscriber 
         
 
         print("Press CTRL-C to quit...")
@@ -305,6 +304,7 @@ def sub_sjv_data(data: zenoh.Sample):
                 
                 payload_target = Target()
                 payload_target.data_source.sources_type.append( TargetDataSource.Source.AIS_PROVIDER)
+                payload_target.data_source.source_name = "Sjöfartsverket"
                 payload_target.timestamp.FromNanoseconds(enclosed_at)
                 payload_target.description.target_type = TargetDescription.TargetType.VESSEL
                 payload_target.description.vessel.information.mmsi = decoded.mmsi
@@ -316,38 +316,49 @@ def sub_sjv_data(data: zenoh.Sample):
 
                     # NAVIGATIONN STATUS
                     status = decoded.status.value
-                    logging.debug(f"Navigation status: {status}")
                     payload_target.navigation_status.status = set_navigation_status_enum(status)
-                    
-                    # set_navigation_status_enum(status)
-                    
-                    logging.debug(f"payload_target: {payload_target}")
-
-                    # logging.debug(f"Payload_target_description: {TargetDescription.NavigationStatus.Name(payload_target_description.navigation_status)}")
-
+                                  
                     # ROT
                     rot = pyais.messages.from_turn(decoded.turn)
                     rot = rot_fix(rot)
-                    payload_target.rate_of_turn_degrees_per_minute = rot
+                    payload_target.rate_of_turn.rate_of_turn_degrees_per_minute = float(rot)
 
                     # SOG, COG, HDG
-                    payload_target.speed_over_ground_knots = decoded.speed
-                    payload_target.course_over_ground_knots = decoded.course
-                    payload_target.heading_degrees = decoded.heading
-                    payload_target.latitude_degrees = decoded.lat
-                    payload_target.longitude_degrees = decoded.lon
+                    payload_target.trajectory_over_ground.speed_over_ground_knots = decoded.speed
+                    payload_target.trajectory_over_ground.course_over_ground_degrees = decoded.course
+                    payload_target.heading.heading_degrees = decoded.heading
+                    payload_target.position.latitude_degrees = decoded.lat
+                    payload_target.position.longitude_degrees = decoded.lon        
+                       
+                    # TODO: UPGRADE - or add transformation to ship outline
+                    geojson = GeoJSON()
+                    geojson.geojson = json.dumps({
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [decoded.lon, decoded.lat]
+                        },
+                        "properties": {
+                            "mmsi": decoded.mmsi,
+                            "status": status,
+                            "rot": rot,
+                            "sog": decoded.speed,
+                            "cog": decoded.course,
+                            "hdg": decoded.heading
+                        }
+                    })
 
                     # Correcting AIS position if vessel outline is available
                     if str(decoded.mmsi) in AIS_DB.keys():
                         if "to_stern" in AIS_DB[str(decoded.mmsi)].keys():
                             latitude_adj, longitude_adj = position_to_common_center_point(decoded.lat, decoded.lon, decoded.heading, AIS_DB[str(
                                 decoded.mmsi)]["to_bow"], AIS_DB[str(decoded.mmsi)]["to_stern"], AIS_DB[str(decoded.mmsi)]["to_port"], AIS_DB[str(decoded.mmsi)]["to_starboard"])
-                            payload_target.latitude_degrees = latitude_adj
-                            payload_target.longitude_degrees = longitude_adj
+                            payload_target.position.latitude_degrees = latitude_adj
+                            payload_target.position.longitude_degrees = longitude_adj
                                     
 
                     # Managing AIS within area of interest
-                    if position_within_boundary(payload_target.latitude_degrees, payload_target.longitude_degrees, args):
+                    if position_within_boundary(payload_target.position.latitude_degrees, payload_target.position.longitude_degrees, args):
                         # for AIS position correction
                         if str(decoded.mmsi) in AIS_DB:
                             AIS_DB[str(decoded.mmsi)] = {
@@ -358,8 +369,7 @@ def sub_sjv_data(data: zenoh.Sample):
                             AIS_DB[str(decoded.mmsi)] = {
                                 "position_within_boundary": True
                             }
-                        publish_message(payload_target, "target",
-                                        decoded.mmsi, session, args, logging)
+
                     else:
                         if str(decoded.mmsi) in AIS_DB:
                             AIS_DB[str(decoded.mmsi)] = {
@@ -373,15 +383,15 @@ def sub_sjv_data(data: zenoh.Sample):
 
                 # TYPE 18: Standard Class B CS Position Report
                 elif decoded.msg_type in [18]:
-
-                    payload_target.speed_over_ground_knots = decoded.speed
-                    payload_target.lpdecoded.lon
-                    payload_target.latitude_degrees = decoded.lat
-                    payload_target.course_over_ground_knots = decoded.course
-                    payload_target.heading_degrees = decoded.heading
-
+                    
+                    payload_target.trajectory_over_ground.speed_over_ground_knots = decoded.speed
+                    payload_target.position.latitude_degrees = decoded.lat
+                    payload_target.position.longitude_degrees = decoded.lon
+                    payload_target.trajectory_over_ground.course_over_ground_degrees = decoded.course
+                    payload_target.heading.heading_degrees = decoded.heading
+                    
                     # Managing AIS within area of interest
-                    if position_within_boundary(payload_target.latitude_degrees, payload_target.longitude_degrees, args):
+                    if position_within_boundary(payload_target.position.latitude_degrees, payload_target.position.longitude_degrees, args):
                         # for AIS position correction
                         if str(decoded.mmsi) in AIS_DB:
                             AIS_DB[str(decoded.mmsi)] = {
@@ -407,10 +417,9 @@ def sub_sjv_data(data: zenoh.Sample):
 
                 elif decoded.msg_type in [24]:  # TYPE 24: Static Data Report
                     json_decoded = decoded.to_json()
-                    # logging.debug(f"Decoded AIS message: {decoded}")
-
+           
                     if "shipname" in json_decoded:  # Part A
-                        payload_target_description.name = decoded.shipname
+                        payload_target.description.vessel.information.name = decoded.shipname
                         
                         if str(decoded.mmsi) in AIS_DB:
                             AIS_DB[str(decoded.mmsi)] = {
@@ -423,9 +432,9 @@ def sub_sjv_data(data: zenoh.Sample):
                             }
 
                     else:  # Part B
-                        payload_target_description.callsign = decoded.callsign
-                        payload_target_description.vessel_type = set_target_type_enum(
-                            decoded.ship_type)
+                      
+                        payload_target.description.vessel.information.call_sign = decoded.callsign
+                        payload_target.description.vessel.information.type = set_target_type_enum(decoded.ship_type)
 
                         width = decoded.to_port + decoded.to_starboard
                         length = decoded.to_bow + decoded.to_stern
@@ -435,10 +444,11 @@ def sub_sjv_data(data: zenoh.Sample):
                         new_to_starboard = width / 2
                         new_to_port = -width / 2
 
-                        payload_target_description.to_bow_meters = new_to_bow
-                        payload_target_description.to_stern_meters = new_to_stern
-                        payload_target_description.to_starboard_meters = new_to_starboard
-                        payload_target_description.to_port_meters = new_to_port
+                        payload_target.description.vessel.common_reference_point.distance_to_bow_meters = new_to_bow
+                        payload_target.description.vessel.common_reference_point.distance_to_stern_meters = new_to_stern
+                        payload_target.description.vessel.common_reference_point.distance_to_starboard_meters = new_to_starboard
+                        payload_target.description.vessel.common_reference_point.distance_to_port_meters = new_to_port
+                 
 
                         # for AIS position correction
                         if str(decoded.mmsi) in AIS_DB:
@@ -458,20 +468,18 @@ def sub_sjv_data(data: zenoh.Sample):
                                 "position_within_boundary": False
                             }
 
+                # Managing AIS within area of interest
+                if str(decoded.mmsi) in  AIS_DB.keys():
+                    if "shipname" in AIS_DB[str(decoded.mmsi)].keys():
+                        payload_target.description.vessel.information.name = AIS_DB[str(decoded.mmsi)]["shipname"]
 
-                    # Managing AIS within area of interest
-                    if str(decoded.mmsi) in  AIS_DB.keys():
-                        if "shipname" in AIS_DB[str(decoded.mmsi)].keys():
-                            payload_target_description.name = AIS_DB[str(decoded.mmsi)]["shipname"]
-
-                        if "position_within_boundary" in AIS_DB[str(decoded.mmsi)].keys():
-                            if AIS_DB[str(decoded.mmsi)]["position_within_boundary"]:
-                                publish_message(payload_target_description, "target_description",
-                                                decoded.mmsi, session, args, logging)
-                                    
-
-                # else:
-                #     logging.debug(f"Decoded AIS message: {decoded}")
+                    if "position_within_boundary" in AIS_DB[str(decoded.mmsi)].keys():
+                        if AIS_DB[str(decoded.mmsi)]["position_within_boundary"]:
+                                                                      
+                            logging.debug(f"PUBLISH payload_target: {payload_target}")
+                            publish_message(payload_target, "target", decoded.mmsi, session, args, logging)
+                            logging.debug(f"PUBLISH GeoJSON: {geojson}")
+                            publish_message(geojson, "foxglove_geojson", decoded.mmsi, session, args, logging)
 
             # except Exception as e:
             #     logging.warning(f"Error parsing AIS: {e}")

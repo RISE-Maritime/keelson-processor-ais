@@ -17,6 +17,10 @@ python3 bin/main.py --log-level 10 -r rise -e ted --publish sjv_nmea_udp --udp-p
 
 python3 bin/main.py --log-level 30 -r rise -e ted --publish sjv_nmea_os_udp --os_mmsi 230361000 --udp-port 10110 --subscribe sjofartsverket --publish sjv_nmea_ais_udp
 
+python3 bin/main.py --log-level 10 -r rise -e ted  --subscribe sjofartsverket --publish sjv_targets
+
+python3 bin/main.py --log-level 10 -r rise -e ted  --subscribe sjofartsverket --publish sjv_targets
+python3 bin/main.py --log-level 10 -r rise -e ted  --subscribe sjofartsverket --publish sjv_targets -bn 57.7 -bw 11.3 -bs 57.2 -be 12.7
 
 
 

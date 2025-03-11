@@ -96,7 +96,7 @@ def terminal_inputs():
         "--boundary_north",
         type=float,
         required=False,
-        default=63.9,
+        default=90.0,
         help="Northern boundary of the area of interest",
     )
 
@@ -105,7 +105,7 @@ def terminal_inputs():
         "--boundary_south",
         type=float,
         required=False,
-        default=62.8,
+        default=-90.0,
         help="Southern boundary of the area of interest",
     )
 
@@ -114,7 +114,7 @@ def terminal_inputs():
         "--boundary_east",
         type=float,
         required=False,
-        default=21.7,
+        default=180.0,
         help="Eastern boundary of the area of interest",
     )
 
@@ -123,7 +123,7 @@ def terminal_inputs():
         "--boundary_west",
         type=float,
         required=False,
-        default=20.293,
+        default=-180.0,
         help="Western boundary of the area of interest",
     )
 

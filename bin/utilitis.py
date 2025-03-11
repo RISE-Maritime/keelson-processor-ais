@@ -4,42 +4,41 @@ from keelson.payloads.Navigation_pb2 import NavigationStatus
 import geopy.distance
 import keelson
 import zenoh
-import logging
 
 
 def set_navigation_status_enum(status):
     if status == 0:
-        return NavigationStatus.NavigationStatus.UNDER_WAY
+        return NavigationStatus.NavigationStatusType.UNDER_WAY
     elif status == 1:
-        return NavigationStatus.NavigationStatus.AT_ANCHOR
+        return NavigationStatus.NavigationStatusType.AT_ANCHOR
     elif status == 2:
-        return NavigationStatus.NavigationStatus.NOT_UNDER_COMMAND
+        return NavigationStatus.NavigationStatusType.NOT_UNDER_COMMAND
     elif status == 3:
-        return NavigationStatus.NavigationStatus.RESTRICTED_MANEUVERABILITY
+        return NavigationStatus.NavigationStatusType.RESTRICTED_MANEUVERABILITY
     elif status == 4:
-        return NavigationStatus.NavigationStatus.CONSTRAINED_BY_DRAUGHT
+        return NavigationStatus.NavigationStatusType.CONSTRAINED_BY_DRAUGHT
     elif status == 5:
-        return NavigationStatus.NavigationStatus.MOORED
+        return NavigationStatus.NavigationStatusType.MOORED
     elif status == 6:
-        return NavigationStatus.NavigationStatus.AGROUND
+        return NavigationStatus.NavigationStatusType.AGROUND
     elif status == 7:
-        return NavigationStatus.NavigationStatus.ENGAGED_IN_FISHING
+        return NavigationStatus.NavigationStatusType.ENGAGED_IN_FISHING
     elif status == 8:
-        return NavigationStatus.NavigationStatus.UNDER_WAY_SAILING
+        return NavigationStatus.NavigationStatusType.UNDER_WAY_SAILING
     elif status == 9:
-        return NavigationStatus.NavigationStatus.FUTURE_HSC
+        return NavigationStatus.NavigationStatusType.FUTURE_HSC
     elif status == 10:
-        return NavigationStatus.NavigationStatus.FUTURE_WIG
+        return NavigationStatus.NavigationStatusType.FUTURE_WIG
     elif status == 11:
-        return NavigationStatus.NavigationStatus.TOWING_ASTERN
+        return NavigationStatus.NavigationStatusType.TOWING_ASTERN
     elif status == 12:
-        return NavigationStatus.NavigationStatus.PUSHING_AHEAD
+        return NavigationStatus.NavigationStatusType.PUSHING_AHEAD
     elif status == 13:
-        return NavigationStatus.NavigationStatus.RESERVED_FUTURE_USE
+        return NavigationStatus.NavigationStatusType.RESERVED_FUTURE_USE
     elif status == 14:
-        return NavigationStatus.NavigationStatus.AIS_SART
+        return NavigationStatus.NavigationStatusType.AIS_SART
     else:
-        return NavigationStatus.NavigationStatus.UNDEFINED
+        return NavigationStatus.NavigationStatusType.UNDEFINED
 
 
 def set_target_type_enum(target_type):
@@ -143,24 +142,20 @@ def rot_fix(rot):
 
 def publish_message(payload, subject: str, mmsi, session, args, logging):
     # Target publisher
-    key_exp_pub_target = keelson.construct_pub_sub_key(
+    key_exp_pub_target = keelson.construct_pubsub_key(
         realm=args.realm,
         entity_id=args.entity_id,
         subject=subject,  # Needs to be a supported subject
         source_id="ais/"+str(mmsi),
     )
-    pub_target = session.declare_publisher(
-        key_exp_pub_target,
-        priority=zenoh.Priority.BACKGROUND(),
-        congestion_control=zenoh.CongestionControl.DROP(),
+    pub = session.declare_publisher(
+        key_exp_pub_target
     )
-    logging.debug(f"Created publisher: {key_exp_pub_target}")
-    logging.debug(f"Publisher payload: {payload}")
 
     # Publish the target
     serialized_payload_target = payload.SerializeToString()
     envelope_target = keelson.enclose(serialized_payload_target)
-    pub_target.put(envelope_target)
+    pub.put(envelope_target)
 
 
 def position_within_boundary(latitude: float, longitude: float, args):
@@ -170,7 +165,7 @@ def position_within_boundary(latitude: float, longitude: float, args):
     :param latitude: Latitude of the position
     :param longitude: Longitude of the position
     :param args: Arguments from the terminal
-    
+
     :return: True if within boundary, False if outside boundary
 
     """
@@ -195,7 +190,6 @@ def corrBering(bering):
         return bering - 360
     elif bering < 0:
         return bering + 360
-
 
 
 def getPredictorPositionsByTime(
