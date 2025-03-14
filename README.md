@@ -20,7 +20,11 @@ python3 bin/main.py --log-level 30 -r rise -e ted --publish sjv_nmea_os_udp --os
 python3 bin/main.py --log-level 10 -r rise -e ted  --subscribe sjofartsverket --publish sjv_targets
 
 python3 bin/main.py --log-level 10 -r rise -e ted  --subscribe sjofartsverket --publish sjv_targets
+
 python3 bin/main.py --log-level 10 -r rise -e ted  --subscribe sjofartsverket --publish sjv_targets -bn 57.7 -bw 11.3 -bs 57.2 -be 12.7
+
+
+python3 bin/main.py --log-level 10 --mode client --connect tcp/10.10.7.2:7448 -r rise -e masslab --subscribe sjofartsverket --publish sjv_targets -bn 57.7 -bw 11.3 -bs 57.2 -be 12.7
 
 
 

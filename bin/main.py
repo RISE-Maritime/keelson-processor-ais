@@ -59,7 +59,7 @@ def main():
     conf = zenoh.Config()
 
     if args.connect is not None:
-        conf.insert_json5(zenoh.config.CONNECT_KEY, json.dumps(args.connect))
+        conf.insert_json5(zenoh.Config.CONNECT_KEY, json.dumps(args.connect))
 
     with zenoh.open(conf) as session:
         info = session.info
@@ -489,136 +489,136 @@ def sub_digitraffic_data(data):
     logging.debug(f"Received on: {data.key_expr}")
 
     # logging.debug(f"Received data: {data.payload}") # Receiving plain json
-    json_string = data.payload.decode('utf-8')
+    # json_string = data.payload.decode('utf-8')
 
-    # Convert the JSON string to a dictionary
-    data_dict = json.loads(json_string)
+    # # Convert the JSON string to a dictionary
+    # data_dict = json.loads(json_string)
 
-    time_now = time.time_ns()
-    payload_target = Target()
-    payload_target.data_source.source.append(DataSource.Source.AIS_PROVIDER)
-    payload_target.timestamp.FromNanoseconds(time_now)
-    payload_target_description = TargetDescription()
-    payload_target_description.data_source.source.append(
-        DataSource.Source.AIS_PROVIDER)
-    payload_target_description.timestamp.FromNanoseconds(time_now)
+    # time_now = time.time_ns()
+    # payload_target = Target()
+    # payload_target.data_source.source.append(DataSource.Source.AIS_PROVIDER)
+    # payload_target.timestamp.FromNanoseconds(time_now)
+    # payload_target_description = TargetDescription()
+    # payload_target_description.data_source.source.append(
+    #     DataSource.Source.AIS_PROVIDER)
+    # payload_target_description.timestamp.FromNanoseconds(time_now)
 
-    if str(data.key_expr).split("/")[-1] == "location":
+    # if str(data.key_expr).split("/")[-1] == "location":
 
-        # logging.debug(f"Location: {data_dict}")
+    #     # logging.debug(f"Location: {data_dict}")
 
-        mmsi = str(data.key_expr).split("/")[-2]
-        payload_target.mmsi = int(mmsi)
+    #     mmsi = str(data.key_expr).split("/")[-2]
+    #     payload_target.mmsi = int(mmsi)
 
-        # NAVIGATIONN STATUS
-        status = data_dict["navStat"]
-        payload_target.navigation_status = set_navigation_status_enum(status)
+    #     # NAVIGATIONN STATUS
+    #     status = data_dict["navStat"]
+    #     payload_target.navigation_status = set_navigation_status_enum(status)
 
-        # ROT, SOG, COG, HDG
-        payload_target.rate_of_turn_degrees_per_minute = data_dict["rot"]
-        payload_target.speed_over_ground_knots = data_dict["sog"]
-        payload_target.course_over_ground_knots = data_dict["cog"]
-        payload_target.heading_degrees = data_dict["heading"]
+    #     # ROT, SOG, COG, HDG
+    #     payload_target.rate_of_turn_degrees_per_minute = data_dict["rot"]
+    #     payload_target.speed_over_ground_knots = data_dict["sog"]
+    #     payload_target.course_over_ground_knots = data_dict["cog"]
+    #     payload_target.heading_degrees = data_dict["heading"]
 
-        # Correcting AIS position if vessel outline is available
-        if str(mmsi) in AIS_DB:
-            if "to_stern" in AIS_DB[str(mmsi)].keys():
-                logging.debug(f"Adjusting position for MMSI: {mmsi}")
-                latitude_adj, longitude_adj = position_to_common_center_point(data_dict["lat"], data_dict["lon"], data_dict["heading"], AIS_DB[str(
-                    mmsi)]["to_bow"], AIS_DB[str(mmsi)]["to_stern"], AIS_DB[str(mmsi)]["to_port"], AIS_DB[str(mmsi)]["to_starboard"])
-                payload_target.latitude_degrees = latitude_adj
-                payload_target.longitude_degrees = longitude_adj
+    #     # Correcting AIS position if vessel outline is available
+    #     if str(mmsi) in AIS_DB:
+    #         if "to_stern" in AIS_DB[str(mmsi)].keys():
+    #             logging.debug(f"Adjusting position for MMSI: {mmsi}")
+    #             latitude_adj, longitude_adj = position_to_common_center_point(data_dict["lat"], data_dict["lon"], data_dict["heading"], AIS_DB[str(
+    #                 mmsi)]["to_bow"], AIS_DB[str(mmsi)]["to_stern"], AIS_DB[str(mmsi)]["to_port"], AIS_DB[str(mmsi)]["to_starboard"])
+    #             payload_target.latitude_degrees = latitude_adj
+    #             payload_target.longitude_degrees = longitude_adj
 
-                payload_target.position.latitude = latitude_adj
-                payload_target.position.longitude = longitude_adj
+    #             payload_target.position.latitude = latitude_adj
+    #             payload_target.position.longitude = longitude_adj
 
-        else:
-            payload_target.latitude_degrees = data_dict["lat"]
-            payload_target.longitude_degrees = data_dict["lon"]
+    #     else:
+    #         payload_target.latitude_degrees = data_dict["lat"]
+    #         payload_target.longitude_degrees = data_dict["lon"]
 
-        # Managing AIS within area of interest
-        if position_within_boundary(payload_target.latitude_degrees, payload_target.longitude_degrees, args):
-            # for AIS position correction
+    #     # Managing AIS within area of interest
+    #     if position_within_boundary(payload_target.latitude_degrees, payload_target.longitude_degrees, args):
+    #         # for AIS position correction
 
-            if str(mmsi) in AIS_DB:
-                AIS_DB[str(mmsi)] = {
-                    **AIS_DB[str(mmsi)],
-                    "position_within_boundary": True
-                }
-            else:
-                AIS_DB[str(mmsi)] = {
-                    "position_within_boundary": True
-                }
-            publish_message(
-                payload_target, "target", mmsi, session, args, logging)
-        else:
-            if str(mmsi) in AIS_DB:
-                AIS_DB[str(mmsi)] = {
-                    **AIS_DB[str(mmsi)],
-                    "position_within_boundary": False
-                }
-            else:
-                AIS_DB[str(mmsi)] = {
-                    "position_within_boundary": False
-                }
+    #         if str(mmsi) in AIS_DB:
+    #             AIS_DB[str(mmsi)] = {
+    #                 **AIS_DB[str(mmsi)],
+    #                 "position_within_boundary": True
+    #             }
+    #         else:
+    #             AIS_DB[str(mmsi)] = {
+    #                 "position_within_boundary": True
+    #             }
+    #         publish_message(
+    #             payload_target, "target", mmsi, session, args, logging)
+    #     else:
+    #         if str(mmsi) in AIS_DB:
+    #             AIS_DB[str(mmsi)] = {
+    #                 **AIS_DB[str(mmsi)],
+    #                 "position_within_boundary": False
+    #             }
+    #         else:
+    #             AIS_DB[str(mmsi)] = {
+    #                 "position_within_boundary": False
+    #             }
 
-    elif str(data.key_expr).split("/")[-1] == "metadata":
-        logging.debug(f"Metadata: {data_dict}")
+    # elif str(data.key_expr).split("/")[-1] == "metadata":
+    #     logging.debug(f"Metadata: {data_dict}")
 
-        # MMSI
-        mmsi = str(data.key_expr).split("/")[-2]
-        payload_target.mmsi = int(mmsi)
-        payload_target_description.mmsi = int(mmsi)
+    #     # MMSI
+    #     mmsi = str(data.key_expr).split("/")[-2]
+    #     payload_target.mmsi = int(mmsi)
+    #     payload_target_description.mmsi = int(mmsi)
 
-        payload_target_description.name = data_dict["name"]
-        payload_target_description.callsign = data_dict["callSign"]
-        payload_target_description.vessel_type = set_target_type_enum(
-            data_dict["type"])
-        payload_target_description.imo = data_dict["imo"]
+    #     payload_target_description.name = data_dict["name"]
+    #     payload_target_description.callsign = data_dict["callSign"]
+    #     payload_target_description.vessel_type = set_target_type_enum(
+    #         data_dict["type"])
+    #     payload_target_description.imo = data_dict["imo"]
 
-        width = data_dict["refC"] + data_dict["refD"]
-        length = data_dict["refB"] + data_dict["refA"]
+    #     width = data_dict["refC"] + data_dict["refD"]
+    #     length = data_dict["refB"] + data_dict["refA"]
 
-        new_to_bow = length / 2
-        new_to_stern = -length / 2
-        new_to_starboard = width / 2
-        new_to_port = -width / 2
+    #     new_to_bow = length / 2
+    #     new_to_stern = -length / 2
+    #     new_to_starboard = width / 2
+    #     new_to_port = -width / 2
 
-        payload_target_description.to_bow_meters = new_to_bow
-        payload_target_description.to_stern_meters = new_to_stern
-        payload_target_description.to_starboard_meters = new_to_starboard
-        payload_target_description.to_port_meters = new_to_port
+    #     payload_target_description.to_bow_meters = new_to_bow
+    #     payload_target_description.to_stern_meters = new_to_stern
+    #     payload_target_description.to_starboard_meters = new_to_starboard
+    #     payload_target_description.to_port_meters = new_to_port
 
-        payload_target_description.destination = data_dict["destination"]
-        payload_target_description.draft_meters = data_dict["draught"]
-        payload_target_description.estimated_time_of_arrival = str(
-            data_dict["eta"])
+    #     payload_target_description.destination = data_dict["destination"]
+    #     payload_target_description.draft_meters = data_dict["draught"]
+    #     payload_target_description.estimated_time_of_arrival = str(
+    #         data_dict["eta"])
 
-        # for AIS position correction
-        if str(mmsi) in AIS_DB:
-            AIS_DB[str(mmsi)] = {
-                **AIS_DB[str(mmsi)],
-                "to_bow": data_dict["refA"],
-                "to_stern": data_dict["refB"],
-                "to_starboard": data_dict["refD"],
-                "to_port": data_dict["refC"]
-            }
-        else:
-            AIS_DB[str(mmsi)] = {
-                "to_bow": data_dict["refA"],
-                "to_stern": data_dict["refB"],
-                "to_starboard": data_dict["refD"],
-                "to_port": data_dict["refC"],
-                "position_within_boundary": False
-            }
+    #     # for AIS position correction
+    #     if str(mmsi) in AIS_DB:
+    #         AIS_DB[str(mmsi)] = {
+    #             **AIS_DB[str(mmsi)],
+    #             "to_bow": data_dict["refA"],
+    #             "to_stern": data_dict["refB"],
+    #             "to_starboard": data_dict["refD"],
+    #             "to_port": data_dict["refC"]
+    #         }
+    #     else:
+    #         AIS_DB[str(mmsi)] = {
+    #             "to_bow": data_dict["refA"],
+    #             "to_stern": data_dict["refB"],
+    #             "to_starboard": data_dict["refD"],
+    #             "to_port": data_dict["refC"],
+    #             "position_within_boundary": False
+    #         }
 
-        # Managing AIS within area of interest
-        if AIS_DB[str(mmsi)]["position_within_boundary"]:
-            publish_message(payload_target_description, "target_description",
-                            mmsi, session, args, logging)
+    #     # Managing AIS within area of interest
+    #     if AIS_DB[str(mmsi)]["position_within_boundary"]:
+    #         publish_message(payload_target_description, "target_description",
+    #                         mmsi, session, args, logging)
 
-    else:
-        logging.warning(f"Unknown data: {data_dict}")
+    # else:
+    #     logging.warning(f"Unknown data: {data_dict}")
 
 
 if __name__ == "__main__":
