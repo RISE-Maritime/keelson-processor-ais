@@ -59,7 +59,7 @@ def main():
     conf = zenoh.Config()
 
     if args.connect is not None:
-        conf.insert_json5(zenoh.Config.CONNECT_KEY, json.dumps(args.connect))
+        conf.insert_json5(zenoh.Config.con, json.dumps(args.connect))
 
     with zenoh.open(conf) as session:
         info = session.info
